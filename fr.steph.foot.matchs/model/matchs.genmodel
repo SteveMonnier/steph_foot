@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.steph.foot.matchs/src" modelPluginID="fr.steph.foot.matchs"
+    modelName="Matchs" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>matchs.ecore</foreignModel>
+  <genPackages prefix="Matchs" basePackage="fr.steph.foot" disposableProviderFactory="true"
+      ecorePackage="matchs.ecore#/">
+    <genClasses ecoreClass="matchs.ecore#//Saison">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Saison/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Saison/ownedInteractions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Saison/joueurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Saison/annee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Saison/nomEquipe"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//Match">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Match/equipeAdverse"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/participants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/messages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/executions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/interactionUses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/ends"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//Joueur">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Joueur/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Joueur/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Joueur/numéro"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Joueur/participeA"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="matchs.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Action/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Action/sendingEnd"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Action/receivingEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Action/temps"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//Passe">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Passe/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Passe/réussi"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//Remplacement"/>
+    <genClasses ecoreClass="matchs.ecore#//Execution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Execution/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Execution/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Execution/start"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Execution/end"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//But">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//But/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//But/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//But/start"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//But/end"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//InteractionUse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//InteractionUse/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//InteractionUse/interaction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//InteractionUse/coveredParticipants"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//InteractionUse/start"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//InteractionUse/finish"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="matchs.ecore#//AbstractEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//AbstractEnd/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//AbstractEnd/context"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//ActionEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//ActionEnd/message"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//ExecutionEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//ExecutionEnd/execution"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//ButEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//ButEnd/state"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//InteractionUseEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//InteractionUseEnd/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//Participant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Participant/est"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated matchs -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.steph.foot.matchs.presentation.MatchsModelWizardID"
+            name="%_UI_MatchsModelWizard_label"
+            class="fr.steph.foot.matchs.presentation.MatchsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MatchsModelFile.gif">
+         <description>%_UI_MatchsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated matchs -->
+      <editor
+            id="fr.steph.foot.matchs.presentation.MatchsEditorID"
+            name="%_UI_MatchsEditor_label"
+            icon="icons/full/obj16/MatchsModelFile.gif"
+            extensions="matchs"
+            class="fr.steph.foot.matchs.presentation.MatchsEditor"
+            contributorClass="fr.steph.foot.matchs.presentation.MatchsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

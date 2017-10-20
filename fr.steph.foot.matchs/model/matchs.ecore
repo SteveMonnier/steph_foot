@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="matchs" nsURI="http://www.steph.org/foot/matchs" nsPrefix="matchs">
+  <eClassifiers xsi:type="ecore:EClass" name="Saison">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A simple container for Interactions, so that one can put several interactions inside the same resource."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedInteractions" upperBound="-1"
+        eType="#//Match" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joueurs" upperBound="-1"
+        eType="#//Joueur" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="annee" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomEquipe" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Match">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Describes the interactions between several participants over time."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="equipeAdverse" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participants" ordered="false"
+        upperBound="-1" eType="#//Participant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executions" upperBound="-1"
+        eType="#//Execution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//But" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactionUses" upperBound="-1"
+        eType="#//InteractionUse" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ends" upperBound="-1" eType="#//AbstractEnd"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Joueur">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A named and typed instance which particpates in the interaction."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numéro" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participeA" upperBound="-1"
+        eType="#//Participant" eOpposite="#//Participant/est"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A message sent from a participant to another (or itself)."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendingEnd" lowerBound="1"
+        eType="#//ActionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receivingEnd" lowerBound="1"
+        eType="#//ActionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Passe" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="réussi" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Remplacement" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Execution">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents an interval of time in which a particapant is active executing some code."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Joueur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//ExecutionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//ExecutionEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="But">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A state transition of a participant."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Joueur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//ButEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//ButEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionUse">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A reference to  or invocation of another interaction defined elsewhere."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="&quot;ref&quot;"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interaction" lowerBound="1"
+        eType="#//Match"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coveredParticipants" lowerBound="1"
+        upperBound="-1" eType="#//Joueur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//InteractionUseEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finish" lowerBound="1"
+        eType="#//InteractionUseEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractEnd" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="All the atomic events (sending of a message, start and finish of an execution...) are represented by AbstractEnds and stored in chronological order in the interaction. The ordering must be total."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Joueur"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionEnd" eSuperTypes="#//AbstractEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionEnd" eSuperTypes="#//AbstractEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="execution" lowerBound="1"
+        eType="#//Execution"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButEnd" eSuperTypes="#//AbstractEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//But"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionUseEnd" eSuperTypes="#//AbstractEnd">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//InteractionUse"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Participant">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="est" lowerBound="1" eType="#//Joueur"
+        eOpposite="#//Joueur/participeA"/>
+  </eClassifiers>
+</ecore:EPackage>

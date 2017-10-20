@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="matchs" version="11.1.1.201610211630">
+  <ownedViewpoints name="Matchs" modelFileExtension="matchs">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Equipe" domainClass="matchs.Saison" enablePopupBars="true">
+      <metamodel href="../../fr.steph.foot.matchs/model/matchs.ecore#/"/>
+      <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Joueur" labelDirectEdit="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Equipe']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20joueur']" semanticCandidatesExpression="feature:joueurs" domainClass="matchs.Joueur">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="[numéro+' : '+nom/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.steph.foot.matchs.design/icons/nantes.jpg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Créer joueur" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Equipe']/@defaultLayer/@nodeMappings[name='Joueur']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Joueur" referenceName="joueurs"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit joueur">
+            <mask mask="{0} : {1}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="numéro" valueExpression="var:arg0">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nom" valueExpression="var:arg1"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:SequenceDiagramDescription" name="Match" titleExpression="aql:'Match contre ' + self.equipeAdverse" domainClass="matchs.Match" endsOrdering="feature:ends" instanceRolesOrdering="feature:participants">
+      <metamodel href="http://www.steph.org/foot/matchs#/"/>
+      <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings xsi:type="description_2:InstanceRoleMapping" name="Participant" semanticCandidatesExpression="feature:participants" semanticElements="var:self" synchronizationLock="true" domainClass="matchs.Participant">
+          <borderedNodeMappings xsi:type="description_2:ExecutionMapping" name="Lifeline" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="matchs.Participant" startingEndFinderExpression="var:self" finishingEndFinderExpression="var:self">
+            <borderedNodeMappings xsi:type="description_2:EndOfLifeMapping" name="EOL" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="matchs.Participant">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="[est.numéro+' : '+est.nom/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.interactions.design/description/eol.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" labelExpression="[est.numéro+' : '+est.nom/]" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="[est.numéro+' : '+est.nom/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.steph.foot.matchs.design/icons/nantes.jpg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="fr.steph.foot.matchs.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
