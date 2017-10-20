@@ -9,8 +9,8 @@ import fr.steph.foot.matchs.Execution;
 import fr.steph.foot.matchs.InteractionUse;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.MatchsPackage;
-
 import fr.steph.foot.matchs.Participant;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.steph.foot.matchs.impl.MatchImpl#getStates <em>States</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.MatchImpl#getInteractionUses <em>Interaction Uses</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.MatchImpl#getEnds <em>Ends</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.impl.MatchImpl#getVideoUrl <em>Video Url</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,6 +127,26 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @ordered
 	 */
 	protected EList<AbstractEnd> ends;
+
+	/**
+	 * The default value of the '{@link #getVideoUrl() <em>Video Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVideoUrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VIDEO_URL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getVideoUrl() <em>Video Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVideoUrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected String videoUrl = VIDEO_URL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,6 +265,27 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVideoUrl(String newVideoUrl) {
+		String oldVideoUrl = videoUrl;
+		videoUrl = newVideoUrl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.MATCH__VIDEO_URL, oldVideoUrl, videoUrl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -285,6 +327,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return getInteractionUses();
 			case MatchsPackage.MATCH__ENDS:
 				return getEnds();
+			case MatchsPackage.MATCH__VIDEO_URL:
+				return getVideoUrl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,6 +369,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				getEnds().clear();
 				getEnds().addAll((Collection<? extends AbstractEnd>)newValue);
 				return;
+			case MatchsPackage.MATCH__VIDEO_URL:
+				setVideoUrl((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -358,6 +405,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 			case MatchsPackage.MATCH__ENDS:
 				getEnds().clear();
 				return;
+			case MatchsPackage.MATCH__VIDEO_URL:
+				setVideoUrl(VIDEO_URL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -384,6 +434,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return interactionUses != null && !interactionUses.isEmpty();
 			case MatchsPackage.MATCH__ENDS:
 				return ends != null && !ends.isEmpty();
+			case MatchsPackage.MATCH__VIDEO_URL:
+				return VIDEO_URL_EDEFAULT == null ? videoUrl != null : !VIDEO_URL_EDEFAULT.equals(videoUrl);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -400,6 +452,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (equipeAdverse: ");
 		result.append(equipeAdverse);
+		result.append(", videoUrl: ");
+		result.append(videoUrl);
 		result.append(')');
 		return result.toString();
 	}

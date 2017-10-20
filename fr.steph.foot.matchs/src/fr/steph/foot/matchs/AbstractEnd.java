@@ -61,12 +61,12 @@ public interface AbstractEnd extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' reference.
-	 * @see #setContext(Joueur)
+	 * @see #setContext(Participant)
 	 * @see fr.steph.foot.matchs.MatchsPackage#getAbstractEnd_Context()
 	 * @model
 	 * @generated
 	 */
-	Joueur getContext();
+	Participant getContext();
 
 	/**
 	 * Sets the value of the '{@link fr.steph.foot.matchs.AbstractEnd#getContext <em>Context</em>}' reference.
@@ -76,6 +76,6 @@ public interface AbstractEnd extends EObject {
 	 * @see #getContext()
 	 * @generated
 	 */
-	void setContext(Joueur value);
+	void setContext(Participant value);
 
 } // AbstractEnd

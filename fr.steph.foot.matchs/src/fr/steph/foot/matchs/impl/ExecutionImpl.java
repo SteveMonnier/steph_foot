@@ -4,8 +4,8 @@ package fr.steph.foot.matchs.impl;
 
 import fr.steph.foot.matchs.Execution;
 import fr.steph.foot.matchs.ExecutionEnd;
-import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.Participant;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -60,7 +60,7 @@ public class ExecutionImpl extends MinimalEObjectImpl.Container implements Execu
 	 * @generated
 	 * @ordered
 	 */
-	protected Joueur owner;
+	protected Participant owner;
 
 	/**
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
@@ -127,10 +127,10 @@ public class ExecutionImpl extends MinimalEObjectImpl.Container implements Execu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Joueur getOwner() {
+	public Participant getOwner() {
 		if (owner != null && owner.eIsProxy()) {
 			InternalEObject oldOwner = (InternalEObject)owner;
-			owner = (Joueur)eResolveProxy(oldOwner);
+			owner = (Participant)eResolveProxy(oldOwner);
 			if (owner != oldOwner) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MatchsPackage.EXECUTION__OWNER, oldOwner, owner));
@@ -144,7 +144,7 @@ public class ExecutionImpl extends MinimalEObjectImpl.Container implements Execu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Joueur basicGetOwner() {
+	public Participant basicGetOwner() {
 		return owner;
 	}
 
@@ -153,8 +153,8 @@ public class ExecutionImpl extends MinimalEObjectImpl.Container implements Execu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOwner(Joueur newOwner) {
-		Joueur oldOwner = owner;
+	public void setOwner(Participant newOwner) {
+		Participant oldOwner = owner;
 		owner = newOwner;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.EXECUTION__OWNER, oldOwner, owner));
@@ -271,7 +271,7 @@ public class ExecutionImpl extends MinimalEObjectImpl.Container implements Execu
 				setName((String)newValue);
 				return;
 			case MatchsPackage.EXECUTION__OWNER:
-				setOwner((Joueur)newValue);
+				setOwner((Participant)newValue);
 				return;
 			case MatchsPackage.EXECUTION__START:
 				setStart((ExecutionEnd)newValue);
@@ -295,7 +295,7 @@ public class ExecutionImpl extends MinimalEObjectImpl.Container implements Execu
 				setName(NAME_EDEFAULT);
 				return;
 			case MatchsPackage.EXECUTION__OWNER:
-				setOwner((Joueur)null);
+				setOwner((Participant)null);
 				return;
 			case MatchsPackage.EXECUTION__START:
 				setStart((ExecutionEnd)null);

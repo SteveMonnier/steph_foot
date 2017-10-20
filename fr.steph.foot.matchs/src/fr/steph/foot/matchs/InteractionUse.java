@@ -86,7 +86,7 @@ public interface InteractionUse extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Covered Participants</b></em>' reference list.
-	 * The list contents are of type {@link fr.steph.foot.matchs.Joueur}.
+	 * The list contents are of type {@link fr.steph.foot.matchs.Participant}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Covered Participants</em>' reference list isn't clear,
@@ -98,7 +98,7 @@ public interface InteractionUse extends EObject {
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Joueur> getCoveredParticipants();
+	EList<Participant> getCoveredParticipants();
 
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' reference.

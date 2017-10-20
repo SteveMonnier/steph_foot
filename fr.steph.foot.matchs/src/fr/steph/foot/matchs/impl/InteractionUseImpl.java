@@ -4,9 +4,9 @@ package fr.steph.foot.matchs.impl;
 
 import fr.steph.foot.matchs.InteractionUse;
 import fr.steph.foot.matchs.InteractionUseEnd;
-import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.Participant;
 
 import java.util.Collection;
 
@@ -78,7 +78,7 @@ public class InteractionUseImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Joueur> coveredParticipants;
+	protected EList<Participant> coveredParticipants;
 
 	/**
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
@@ -183,9 +183,9 @@ public class InteractionUseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Joueur> getCoveredParticipants() {
+	public EList<Participant> getCoveredParticipants() {
 		if (coveredParticipants == null) {
-			coveredParticipants = new EObjectResolvingEList<Joueur>(Joueur.class, this, MatchsPackage.INTERACTION_USE__COVERED_PARTICIPANTS);
+			coveredParticipants = new EObjectResolvingEList<Participant>(Participant.class, this, MatchsPackage.INTERACTION_USE__COVERED_PARTICIPANTS);
 		}
 		return coveredParticipants;
 	}
@@ -308,7 +308,7 @@ public class InteractionUseImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case MatchsPackage.INTERACTION_USE__COVERED_PARTICIPANTS:
 				getCoveredParticipants().clear();
-				getCoveredParticipants().addAll((Collection<? extends Joueur>)newValue);
+				getCoveredParticipants().addAll((Collection<? extends Participant>)newValue);
 				return;
 			case MatchsPackage.INTERACTION_USE__START:
 				setStart((InteractionUseEnd)newValue);

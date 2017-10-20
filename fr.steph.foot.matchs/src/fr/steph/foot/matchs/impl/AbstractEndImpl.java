@@ -3,8 +3,8 @@
 package fr.steph.foot.matchs.impl;
 
 import fr.steph.foot.matchs.AbstractEnd;
-import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.Participant;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -57,7 +57,7 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 * @ordered
 	 */
-	protected Joueur context;
+	protected Participant context;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,10 +104,10 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Joueur getContext() {
+	public Participant getContext() {
 		if (context != null && context.eIsProxy()) {
 			InternalEObject oldContext = (InternalEObject)context;
-			context = (Joueur)eResolveProxy(oldContext);
+			context = (Participant)eResolveProxy(oldContext);
 			if (context != oldContext) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MatchsPackage.ABSTRACT_END__CONTEXT, oldContext, context));
@@ -121,7 +121,7 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Joueur basicGetContext() {
+	public Participant basicGetContext() {
 		return context;
 	}
 
@@ -130,8 +130,8 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContext(Joueur newContext) {
-		Joueur oldContext = context;
+	public void setContext(Participant newContext) {
+		Participant oldContext = context;
 		context = newContext;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.ABSTRACT_END__CONTEXT, oldContext, context));
@@ -166,7 +166,7 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 				setName((String)newValue);
 				return;
 			case MatchsPackage.ABSTRACT_END__CONTEXT:
-				setContext((Joueur)newValue);
+				setContext((Participant)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,7 +184,7 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 				setName(NAME_EDEFAULT);
 				return;
 			case MatchsPackage.ABSTRACT_END__CONTEXT:
-				setContext((Joueur)null);
+				setContext((Participant)null);
 				return;
 		}
 		super.eUnset(featureID);

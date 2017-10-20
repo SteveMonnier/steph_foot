@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.steph.foot.matchs.Match#getStates <em>States</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Match#getInteractionUses <em>Interaction Uses</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Match#getEnds <em>Ends</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.Match#getVideoUrl <em>Video Url</em>}</li>
  * </ul>
  *
  * @see fr.steph.foot.matchs.MatchsPackage#getMatch()
@@ -64,7 +65,7 @@ public interface Match extends EObject {
 	 * The list contents are of type {@link fr.steph.foot.matchs.Participant}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Participants</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Participants</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -154,5 +155,31 @@ public interface Match extends EObject {
 	 * @generated
 	 */
 	EList<AbstractEnd> getEnds();
+
+	/**
+	 * Returns the value of the '<em><b>Video Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Video Url</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Video Url</em>' attribute.
+	 * @see #setVideoUrl(String)
+	 * @see fr.steph.foot.matchs.MatchsPackage#getMatch_VideoUrl()
+	 * @model
+	 * @generated
+	 */
+	String getVideoUrl();
+
+	/**
+	 * Sets the value of the '{@link fr.steph.foot.matchs.Match#getVideoUrl <em>Video Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Video Url</em>' attribute.
+	 * @see #getVideoUrl()
+	 * @generated
+	 */
+	void setVideoUrl(String value);
 
 } // Match

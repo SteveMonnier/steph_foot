@@ -23,6 +23,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/states"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/interactionUses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Match/ends"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Match/videoUrl"/>
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//Joueur">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Joueur/nom"/>

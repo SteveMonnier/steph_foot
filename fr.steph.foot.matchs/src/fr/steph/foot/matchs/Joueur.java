@@ -3,6 +3,7 @@
 package fr.steph.foot.matchs;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 

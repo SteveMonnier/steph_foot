@@ -203,13 +203,22 @@ public interface MatchsPackage extends EPackage {
 	int MATCH__ENDS = 6;
 
 	/**
+	 * The feature id for the '<em><b>Video Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__VIDEO_URL = 7;
+
+	/**
 	 * The number of structural features of the '<em>Match</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCH_FEATURE_COUNT = 7;
+	int MATCH_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Match</em>' class.
@@ -961,7 +970,6 @@ public interface MatchsPackage extends EPackage {
 	 */
 	int INTERACTION_USE_END_OPERATION_COUNT = ABSTRACT_END_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.ParticipantImpl <em>Participant</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1151,6 +1159,17 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMatch_Ends();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Match#getVideoUrl <em>Video Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Video Url</em>'.
+	 * @see fr.steph.foot.matchs.Match#getVideoUrl()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EAttribute getMatch_VideoUrl();
 
 	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Joueur <em>Joueur</em>}'.
@@ -1750,6 +1769,14 @@ public interface MatchsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MATCH__ENDS = eINSTANCE.getMatch_Ends();
+
+		/**
+		 * The meta object literal for the '<em><b>Video Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATCH__VIDEO_URL = eINSTANCE.getMatch_VideoUrl();
 
 		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.JoueurImpl <em>Joueur</em>}' class.

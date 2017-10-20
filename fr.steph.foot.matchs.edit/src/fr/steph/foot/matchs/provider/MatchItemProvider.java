@@ -65,6 +65,7 @@ public class MatchItemProvider
 
 			addEquipeAdversePropertyDescriptor(object);
 			addParticipantsPropertyDescriptor(object);
+			addVideoUrlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class MatchItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Video Url feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVideoUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Match_videoUrl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Match_videoUrl_feature", "_UI_Match_type"),
+				 MatchsPackage.Literals.MATCH__VIDEO_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -187,6 +210,7 @@ public class MatchItemProvider
 
 		switch (notification.getFeatureID(Match.class)) {
 			case MatchsPackage.MATCH__EQUIPE_ADVERSE:
+			case MatchsPackage.MATCH__VIDEO_URL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case MatchsPackage.MATCH__PARTICIPANTS:

@@ -63,12 +63,12 @@ public interface But extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owner</em>' reference.
-	 * @see #setOwner(Joueur)
+	 * @see #setOwner(Participant)
 	 * @see fr.steph.foot.matchs.MatchsPackage#getBut_Owner()
 	 * @model required="true"
 	 * @generated
 	 */
-	Joueur getOwner();
+	Participant getOwner();
 
 	/**
 	 * Sets the value of the '{@link fr.steph.foot.matchs.But#getOwner <em>Owner</em>}' reference.
@@ -78,7 +78,7 @@ public interface But extends EObject {
 	 * @see #getOwner()
 	 * @generated
 	 */
-	void setOwner(Joueur value);
+	void setOwner(Participant value);
 
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' reference.
