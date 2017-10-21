@@ -4,6 +4,7 @@ package fr.steph.foot.matchs.provider;
 
 
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.Participant;
 
 import java.util.Collection;
 import java.util.List;
@@ -99,11 +100,11 @@ public class ParticipantItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Participant_type");
+		return getString("_UI_Participant_type") + " " + ((Participant) object).getEst().getNom();
 	}
 	
 
