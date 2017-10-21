@@ -87,6 +87,7 @@ public class MatchsSwitch<T> extends Switch<T> {
 			case MatchsPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
+				if (result == null) result = caseTimedEvent(action);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -94,6 +95,7 @@ public class MatchsSwitch<T> extends Switch<T> {
 				Passe passe = (Passe)theEObject;
 				T result = casePasse(passe);
 				if (result == null) result = caseAction(passe);
+				if (result == null) result = caseTimedEvent(passe);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -101,6 +103,7 @@ public class MatchsSwitch<T> extends Switch<T> {
 				Remplacement remplacement = (Remplacement)theEObject;
 				T result = caseRemplacement(remplacement);
 				if (result == null) result = caseAction(remplacement);
+				if (result == null) result = caseTimedEvent(remplacement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -113,6 +116,7 @@ public class MatchsSwitch<T> extends Switch<T> {
 			case MatchsPackage.BUT: {
 				But but = (But)theEObject;
 				T result = caseBut(but);
+				if (result == null) result = caseTimedEvent(but);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -159,6 +163,12 @@ public class MatchsSwitch<T> extends Switch<T> {
 			case MatchsPackage.PARTICIPANT: {
 				Participant participant = (Participant)theEObject;
 				T result = caseParticipant(participant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MatchsPackage.TIMED_EVENT: {
+				TimedEvent timedEvent = (TimedEvent)theEObject;
+				T result = caseTimedEvent(timedEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -388,6 +398,21 @@ public class MatchsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParticipant(Participant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Timed Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Timed Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimedEvent(TimedEvent object) {
 		return null;
 	}
 

@@ -35,7 +35,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Action/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Action/sendingEnd"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Action/receivingEnd"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Action/temps"/>
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//Passe">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Passe/operation"/>
@@ -79,6 +78,9 @@
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//Participant">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Participant/est"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="matchs.ecore#//TimedEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//TimedEvent/temps"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

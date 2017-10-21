@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,12 +24,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getSendingEnd <em>Sending End</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getReceivingEnd <em>Receiving End</em>}</li>
- *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getTemps <em>Temps</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ActionImpl extends MinimalEObjectImpl.Container implements Action {
+public abstract class ActionImpl extends TimedEventImpl implements Action {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,26 +68,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ActionEnd receivingEnd;
-
-	/**
-	 * The default value of the '{@link #getTemps() <em>Temps</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTemps()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEMPS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTemps() <em>Temps</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTemps()
-	 * @generated
-	 * @ordered
-	 */
-	protected String temps = TEMPS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,27 +190,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTemps() {
-		return temps;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTemps(String newTemps) {
-		String oldTemps = temps;
-		temps = newTemps;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.ACTION__TEMPS, oldTemps, temps));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -244,8 +201,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 			case MatchsPackage.ACTION__RECEIVING_END:
 				if (resolve) return getReceivingEnd();
 				return basicGetReceivingEnd();
-			case MatchsPackage.ACTION__TEMPS:
-				return getTemps();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,9 +221,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case MatchsPackage.ACTION__RECEIVING_END:
 				setReceivingEnd((ActionEnd)newValue);
-				return;
-			case MatchsPackage.ACTION__TEMPS:
-				setTemps((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,9 +243,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 			case MatchsPackage.ACTION__RECEIVING_END:
 				setReceivingEnd((ActionEnd)null);
 				return;
-			case MatchsPackage.ACTION__TEMPS:
-				setTemps(TEMPS_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -312,8 +261,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 				return sendingEnd != null;
 			case MatchsPackage.ACTION__RECEIVING_END:
 				return receivingEnd != null;
-			case MatchsPackage.ACTION__TEMPS:
-				return TEMPS_EDEFAULT == null ? temps != null : !TEMPS_EDEFAULT.equals(temps);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +277,6 @@ public abstract class ActionImpl extends MinimalEObjectImpl.Container implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", temps: ");
-		result.append(temps);
 		result.append(')');
 		return result.toString();
 	}

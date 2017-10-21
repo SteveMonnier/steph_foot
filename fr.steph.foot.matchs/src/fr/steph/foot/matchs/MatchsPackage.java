@@ -294,6 +294,43 @@ public interface MatchsPackage extends EPackage {
 	int JOUEUR_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.TimedEventImpl <em>Timed Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.steph.foot.matchs.impl.TimedEventImpl
+	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getTimedEvent()
+	 * @generated
+	 */
+	int TIMED_EVENT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_EVENT__TEMPS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Timed Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_EVENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Timed Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_EVENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.ActionImpl <em>Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -304,13 +341,22 @@ public interface MatchsPackage extends EPackage {
 	int ACTION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__TEMPS = TIMED_EVENT__TEMPS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__NAME = 0;
+	int ACTION__NAME = TIMED_EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sending End</b></em>' reference.
@@ -319,7 +365,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__SENDING_END = 1;
+	int ACTION__SENDING_END = TIMED_EVENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Receiving End</b></em>' reference.
@@ -328,16 +374,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__RECEIVING_END = 2;
-
-	/**
-	 * The feature id for the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__TEMPS = 3;
+	int ACTION__RECEIVING_END = TIMED_EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -346,7 +383,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 4;
+	int ACTION_FEATURE_COUNT = TIMED_EVENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -355,7 +392,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_OPERATION_COUNT = 0;
+	int ACTION_OPERATION_COUNT = TIMED_EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.PasseImpl <em>Passe</em>}' class.
@@ -366,6 +403,15 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 */
 	int PASSE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PASSE__TEMPS = ACTION__TEMPS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -393,15 +439,6 @@ public interface MatchsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PASSE__RECEIVING_END = ACTION__RECEIVING_END;
-
-	/**
-	 * The feature id for the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__TEMPS = ACTION__TEMPS;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' reference.
@@ -450,6 +487,15 @@ public interface MatchsPackage extends EPackage {
 	int REMPLACEMENT = 5;
 
 	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMPLACEMENT__TEMPS = ACTION__TEMPS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -475,15 +521,6 @@ public interface MatchsPackage extends EPackage {
 	 * @ordered
 	 */
 	int REMPLACEMENT__RECEIVING_END = ACTION__RECEIVING_END;
-
-	/**
-	 * The feature id for the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMPLACEMENT__TEMPS = ACTION__TEMPS;
 
 	/**
 	 * The number of structural features of the '<em>Remplacement</em>' class.
@@ -578,13 +615,22 @@ public interface MatchsPackage extends EPackage {
 	int BUT = 7;
 
 	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUT__TEMPS = TIMED_EVENT__TEMPS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUT__NAME = 0;
+	int BUT__NAME = TIMED_EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -593,7 +639,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUT__OWNER = 1;
+	int BUT__OWNER = TIMED_EVENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' reference.
@@ -602,7 +648,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUT__START = 2;
+	int BUT__START = TIMED_EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>End</b></em>' reference.
@@ -611,7 +657,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUT__END = 3;
+	int BUT__END = TIMED_EVENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>But</em>' class.
@@ -620,7 +666,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUT_FEATURE_COUNT = 4;
+	int BUT_FEATURE_COUNT = TIMED_EVENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>But</em>' class.
@@ -629,7 +675,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUT_OPERATION_COUNT = 0;
+	int BUT_OPERATION_COUNT = TIMED_EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.InteractionUseImpl <em>Interaction Use</em>}' class.
@@ -1269,17 +1315,6 @@ public interface MatchsPackage extends EPackage {
 	EReference getAction_ReceivingEnd();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Action#getTemps <em>Temps</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Temps</em>'.
-	 * @see fr.steph.foot.matchs.Action#getTemps()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EAttribute getAction_Temps();
-
-	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Passe <em>Passe</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1632,6 +1667,27 @@ public interface MatchsPackage extends EPackage {
 	EReference getParticipant_Est();
 
 	/**
+	 * Returns the meta object for class '{@link fr.steph.foot.matchs.TimedEvent <em>Timed Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timed Event</em>'.
+	 * @see fr.steph.foot.matchs.TimedEvent
+	 * @generated
+	 */
+	EClass getTimedEvent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.TimedEvent#getTemps <em>Temps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Temps</em>'.
+	 * @see fr.steph.foot.matchs.TimedEvent#getTemps()
+	 * @see #getTimedEvent()
+	 * @generated
+	 */
+	EAttribute getTimedEvent_Temps();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1853,14 +1909,6 @@ public interface MatchsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTION__RECEIVING_END = eINSTANCE.getAction_ReceivingEnd();
-
-		/**
-		 * The meta object literal for the '<em><b>Temps</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTION__TEMPS = eINSTANCE.getAction_Temps();
 
 		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.PasseImpl <em>Passe</em>}' class.
@@ -2147,6 +2195,24 @@ public interface MatchsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARTICIPANT__EST = eINSTANCE.getParticipant_Est();
+
+		/**
+		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.TimedEventImpl <em>Timed Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.steph.foot.matchs.impl.TimedEventImpl
+		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getTimedEvent()
+		 * @generated
+		 */
+		EClass TIMED_EVENT = eINSTANCE.getTimedEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Temps</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIMED_EVENT__TEMPS = eINSTANCE.getTimedEvent_Temps();
 
 	}
 

@@ -19,6 +19,7 @@ import fr.steph.foot.matchs.Participant;
 import fr.steph.foot.matchs.Passe;
 import fr.steph.foot.matchs.Remplacement;
 import fr.steph.foot.matchs.Saison;
+import fr.steph.foot.matchs.TimedEvent;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -139,6 +140,13 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * @generated
 	 */
 	private EClass participantEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timedEventEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -418,15 +426,6 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 */
 	public EReference getAction_ReceivingEnd() {
 		return (EReference)actionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAction_Temps() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -731,6 +730,24 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimedEvent() {
+		return timedEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimedEvent_Temps() {
+		return (EAttribute)timedEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MatchsFactory getMatchsFactory() {
 		return (MatchsFactory)getEFactoryInstance();
 	}
@@ -781,7 +798,6 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		createEAttribute(actionEClass, ACTION__NAME);
 		createEReference(actionEClass, ACTION__SENDING_END);
 		createEReference(actionEClass, ACTION__RECEIVING_END);
-		createEAttribute(actionEClass, ACTION__TEMPS);
 
 		passeEClass = createEClass(PASSE);
 		createEReference(passeEClass, PASSE__OPERATION);
@@ -826,6 +842,9 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		participantEClass = createEClass(PARTICIPANT);
 		createEReference(participantEClass, PARTICIPANT__EST);
+
+		timedEventEClass = createEClass(TIMED_EVENT);
+		createEAttribute(timedEventEClass, TIMED_EVENT__TEMPS);
 	}
 
 	/**
@@ -859,8 +878,10 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		actionEClass.getESuperTypes().add(this.getTimedEvent());
 		passeEClass.getESuperTypes().add(this.getAction());
 		remplacementEClass.getESuperTypes().add(this.getAction());
+		butEClass.getESuperTypes().add(this.getTimedEvent());
 		actionEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		executionEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		butEndEClass.getESuperTypes().add(this.getAbstractEnd());
@@ -894,7 +915,6 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_SendingEnd(), this.getActionEnd(), null, "sendingEnd", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_ReceivingEnd(), this.getActionEnd(), null, "receivingEnd", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_Temps(), theEcorePackage.getEString(), "temps", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(passeEClass, Passe.class, "Passe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPasse_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 1, 1, Passe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -939,6 +959,9 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		initEClass(participantEClass, Participant.class, "Participant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParticipant_Est(), this.getJoueur(), this.getJoueur_ParticipeA(), "est", null, 1, 1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timedEventEClass, TimedEvent.class, "TimedEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTimedEvent_Temps(), theEcorePackage.getEString(), "temps", null, 0, 1, TimedEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

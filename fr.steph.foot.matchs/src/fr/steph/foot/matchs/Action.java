@@ -2,7 +2,6 @@
  */
 package fr.steph.foot.matchs;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,14 +19,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.steph.foot.matchs.Action#getName <em>Name</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Action#getSendingEnd <em>Sending End</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Action#getReceivingEnd <em>Receiving End</em>}</li>
- *   <li>{@link fr.steph.foot.matchs.Action#getTemps <em>Temps</em>}</li>
  * </ul>
  *
  * @see fr.steph.foot.matchs.MatchsPackage#getAction()
  * @model abstract="true"
  * @generated
  */
-public interface Action extends EObject {
+public interface Action extends TimedEvent {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -105,31 +103,5 @@ public interface Action extends EObject {
 	 * @generated
 	 */
 	void setReceivingEnd(ActionEnd value);
-
-	/**
-	 * Returns the value of the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Temps</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Temps</em>' attribute.
-	 * @see #setTemps(String)
-	 * @see fr.steph.foot.matchs.MatchsPackage#getAction_Temps()
-	 * @model
-	 * @generated
-	 */
-	String getTemps();
-
-	/**
-	 * Sets the value of the '{@link fr.steph.foot.matchs.Action#getTemps <em>Temps</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Temps</em>' attribute.
-	 * @see #getTemps()
-	 * @generated
-	 */
-	void setTemps(String value);
 
 } // Action

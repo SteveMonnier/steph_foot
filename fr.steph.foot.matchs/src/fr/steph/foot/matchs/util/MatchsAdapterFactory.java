@@ -128,6 +128,10 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 				return createParticipantAdapter();
 			}
 			@Override
+			public Adapter caseTimedEvent(TimedEvent object) {
+				return createTimedEventAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -354,6 +358,20 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParticipantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.steph.foot.matchs.TimedEvent <em>Timed Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.steph.foot.matchs.TimedEvent
+	 * @generated
+	 */
+	public Adapter createTimedEventAdapter() {
 		return null;
 	}
 
