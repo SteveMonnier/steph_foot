@@ -19,7 +19,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import fr.steph.foot.matchs.MatchsPackage;
-import fr.steph.foot.matchs.Participant;
 
 /**
  * This is the item provider adapter for a {@link fr.steph.foot.matchs.Participant} object.
@@ -102,7 +101,7 @@ public class ParticipantItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Participant_type") + " " + ((Participant) object).getEst().getNom();
+		return getString("_UI_Participant_type");
 	}
 	
 

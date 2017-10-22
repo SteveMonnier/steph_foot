@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" name="matchs" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:description_3="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" name="matchs" version="11.1.1.201610211630">
   <ownedViewpoints name="Matchs" modelFileExtension="matchs">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Equipe" domainClass="matchs.Saison" enablePopupBars="true">
       <metamodel href="../../fr.steph.foot.matchs/model/matchs.ecore#/"/>
@@ -45,10 +45,11 @@
               </style>
             </borderedNodeMappings>
             <borderedNodeMappings xsi:type="description_2:StateMapping" name="But" semanticCandidatesExpression="service:butsDuParticipant" domainClass="matchs.But" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:send">
-              <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="feature:temps" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="12" verticalDiameterComputationExpression="3">
+              <style xsi:type="style:EllipseNodeDescription" labelSize="10" showIcon="false" labelExpression="feature:temps" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="12" verticalDiameterComputationExpression="3">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+                <labelFormat>bold</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
             </borderedNodeMappings>
             <style xsi:type="style:SquareDescription" labelExpression="[est.numéro+' : '+est.nom/]" labelPosition="node" resizeKind="NSEW">
@@ -63,7 +64,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings xsi:type="description_2:BasicMessageMapping" name="Passe" semanticCandidatesExpression="feature:messages" sourceMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']" targetMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']" targetFinderExpression="[receivingEnd._context/]" sourceFinderExpression="[sendingEnd._context/]" domainClass="matchs.Passe" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
+        <edgeMappings xsi:type="description_2:BasicMessageMapping" name="Passe" semanticCandidatesExpression="feature:messages" sourceMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']" targetMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']" targetFinderExpression="service:getReceivingContext" sourceFinderExpression="service:getSendingContext" domainClass="matchs.Passe" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
@@ -108,6 +109,12 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
                 </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
             <startingEndPredecessor name="startingEndPredecessor"/>
@@ -130,6 +137,12 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:false"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -165,6 +178,20 @@
           </style>
         </edgeMappings>
       </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_3:EditionTableDescription" name="Saison" domainClass="matchs.Saison">
+      <ownedLineMappings name="Match" domainClass="matchs.Match" semanticCandidatesExpression="feature:ownedInteractions" headerLabelExpression="Matchs">
+        <defaultForeground>
+          <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </defaultForeground>
+      </ownedLineMappings>
+      <ownedCreateLine name="Ajouter Match" mapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Saison']/@ownedLineMappings[name='Match']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:CreateInstance" typeName="matchs.Match" referenceName="ownedInteractions"/>
+      </ownedCreateLine>
+      <ownedColumnMappings name="equipeAdverse" headerLabelExpression="Equipe adverse" featureName="equipeAdverse"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="fr.steph.foot.matchs.design.Services"/>
   </ownedViewpoints>

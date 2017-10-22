@@ -1,18 +1,25 @@
 package fr.steph.foot.matchs.design;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
 
 import com.google.common.collect.Lists;
 
+import fr.steph.foot.matchs.AbstractEnd;
+import fr.steph.foot.matchs.Action;
+import fr.steph.foot.matchs.ActionEnd;
 import fr.steph.foot.matchs.But;
+import fr.steph.foot.matchs.ButEnd;
 import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.Participant;
+import fr.steph.foot.matchs.Passe;
 import fr.steph.foot.matchs.Saison;
-import fr.steph.foot.matchs.impl.MatchImpl;
 
 /**
  * The services class used by VSM.
@@ -73,116 +80,116 @@ public class Services {
       return self;
     }
 
-//    /**
-//     * Returns the semantic element corresponding to the source of a message.
-//     * This can be a participant or an execution.
-//     * 
-//     * @param msg
-//     *            the message.
-//     * @return the semantic elements corresponding to the source of the message.
-//     */
-//    public EObject getSendingContext(Passe msg) {
-//        ActionEnd sendingEnd = msg.getSendingEnd();
-//        if (sendingEnd != null) {
-//            Participant p = sendingEnd.getContext();
-//            List<EventContext> structure = computeContainmentStructure(p);
-//            for (EventContext ec : structure) {
-//                if (ec.getElement().equals(msg) && ec.isStart()) {
-//                    EObject parent = ec.getParent();
-//                    if (parent != null) {
-//                        return parent;
-//                    } else {
-//                        return p;
-//                    }
-//                }
-//            }
-//        }
-//        return msg;
-//    }
-//
-//    /**
-//     * Returns the semantic element corresponding to the target of a message.
-//     * This can be a participant, execution or an instance role.
-//     * 
-//     * @param msg
-//     *            the message.
-//     * @return the semantic elements corresponding to the target of the message.
-//     */
-//    public EObject getReceivingContext(Passe msg) {
-//        ActionEnd receivingEnd = msg.getReceivingEnd();
-//        if (receivingEnd != null) {
-//            Participant p = receivingEnd.getContext();
-//            if (p != null) {
-//                List<EventContext> structure = computeContainmentStructure(p);
-//                for (EventContext ec : structure) {
-//                    if (ec.getElement().equals(msg) && !ec.isStart()) {
-//                        EObject parent = ec.getParent();
-//                        if (parent != null) {
-//                            return parent;
-//                        } else {
-//                            return p;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        return msg;
-//    }
-//
-//    public List<EventContext> computeContainmentStructure(Participant owner) {
-//        if (owner == null || !(owner.eContainer() instanceof Match)) {
-//            return Collections.emptyList();
-//        } else {
-//        	Match interaction = (Match) owner.eContainer();
-//            Stack<EObject> ancestors = new Stack<EObject>();
-//            ancestors.push(owner);
-//            List<EventContext> result = new ArrayList<EventContext>();
-//            for (fr.steph.foot.matchs.AbstractEnd end : interaction.getEnds()) {
-//                if (end.getContext() != owner) {
-//                    continue;
-//                }
-//
-//                if (isStartingStateEnd(end)) {
-//                    ButEnd execEnd = (ButEnd) end;
-//                    result.add(new EventContext(ancestors.peek(), execEnd.getState(), true, ancestors.size() + 1));
-//                    ancestors.push(execEnd.getState());
-//                }
-//
-//                if (end instanceof ActionEnd) {
-//                	ActionEnd msgEnd = (ActionEnd) end;
-//                    Action msg = msgEnd.getMessage();
-//                    if (msg != null) {
-//                        result.add(new EventContext(ancestors.peek(), msgEnd.getMessage(), msgEnd.equals(msg.getSendingEnd()), ancestors.size()));
-//                    }
-//                }
-//
-//                if (isFinishingStateEnd(end)) {
-//                	ButEnd execEnd = (ButEnd) end;
-//                    ancestors.pop();
-//                    result.add(new EventContext(ancestors.peek(), execEnd.getState(), false, ancestors.size() + 1));
-//                }
-//            }
-//            return result;
-//        }
-//    }
-//
-//    public boolean isStartingStateEnd(AbstractEnd end) {
-//        if (end instanceof ButEnd) {
-//        	ButEnd ee = (ButEnd) end;
-//            return ee.getState() != null && ee.getState().getStart() == end;
-//        } else {
-//            return false;
-//        }
-//    }
-//
-//    public boolean isFinishingStateEnd(AbstractEnd end) {
-//        if (end instanceof ButEnd) {
-//        	ButEnd ee = (ButEnd) end;
-//            return ee.getState() != null && ee.getState().getEnd() == end;
-//        } else {
-//            return false;
-//        }
-//    }
+    /**
+     * Returns the semantic element corresponding to the source of a message.
+     * This can be a participant or an execution.
+     * 
+     * @param msg
+     *            the message.
+     * @return the semantic elements corresponding to the source of the message.
+     */
+    public EObject getSendingContext(Passe msg) {
+        ActionEnd sendingEnd = msg.getSendingEnd();
+        if (sendingEnd != null) {
+            Participant p = sendingEnd.getContext();
+            List<EventContext> structure = computeContainmentStructure(p);
+            for (EventContext ec : structure) {
+                if (ec.getElement().equals(msg) && ec.isStart()) {
+                    EObject parent = ec.getParent();
+                    if (parent != null) {
+                        return parent;
+                    } else {
+                        return p;
+                    }
+                }
+            }
+        }
+        return msg;
+    }
+
+    /**
+     * Returns the semantic element corresponding to the target of a message.
+     * This can be a participant, execution or an instance role.
+     * 
+     * @param msg
+     *            the message.
+     * @return the semantic elements corresponding to the target of the message.
+     */
+    public EObject getReceivingContext(Passe msg) {
+        ActionEnd receivingEnd = msg.getReceivingEnd();
+        if (receivingEnd != null) {
+            Participant p = receivingEnd.getContext();
+            if (p != null) {
+                List<EventContext> structure = computeContainmentStructure(p);
+                for (EventContext ec : structure) {
+                    if (ec.getElement().equals(msg) && !ec.isStart()) {
+                        EObject parent = ec.getParent();
+                        if (parent != null) {
+                            return parent;
+                        } else {
+                            return p;
+                        }
+                    }
+                }
+            }
+        }
+        return msg;
+    }
+
+    public List<EventContext> computeContainmentStructure(Participant owner) {
+        if (owner == null || !(owner.eContainer() instanceof Match)) {
+            return Collections.emptyList();
+        } else {
+        	Match interaction = (Match) owner.eContainer();
+            Stack<EObject> ancestors = new Stack<EObject>();
+            ancestors.push(owner);
+            List<EventContext> result = new ArrayList<EventContext>();
+            for (fr.steph.foot.matchs.AbstractEnd end : interaction.getEnds()) {
+                if (end.getContext() != owner) {
+                    continue;
+                }
+
+                if (isStartingStateEnd(end)) {
+                    ButEnd execEnd = (ButEnd) end;
+                    result.add(new EventContext(ancestors.peek(), execEnd.getState(), true, ancestors.size() + 1));
+                    ancestors.push(execEnd.getState());
+                }
+
+                if (end instanceof ActionEnd) {
+                	ActionEnd msgEnd = (ActionEnd) end;
+                    Action msg = msgEnd.getMessage();
+                    if (msg != null) {
+                        result.add(new EventContext(ancestors.peek(), msgEnd.getMessage(), msgEnd.equals(msg.getSendingEnd()), ancestors.size()));
+                    }
+                }
+
+                if (isFinishingStateEnd(end)) {
+                	ButEnd execEnd = (ButEnd) end;
+                    ancestors.pop();
+                    result.add(new EventContext(ancestors.peek(), execEnd.getState(), false, ancestors.size() + 1));
+                }
+            }
+            return result;
+        }
+    }
+
+    public boolean isStartingStateEnd(AbstractEnd end) {
+        if (end instanceof ButEnd) {
+        	ButEnd ee = (ButEnd) end;
+            return ee.getState() != null && ee.getState().getStart() == end;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isFinishingStateEnd(AbstractEnd end) {
+        if (end instanceof ButEnd) {
+        	ButEnd ee = (ButEnd) end;
+            return ee.getState() != null && ee.getState().getEnd() == end;
+        } else {
+            return false;
+        }
+    }
     
     public Joueur selectJoueur(Participant p) {
     	Saison saison = (Saison) p.eContainer().eContainer();
@@ -191,42 +198,9 @@ public class Services {
     	return joueur;
     }
     
-//    public Object butsDuParticipant(Participant p) {
-//    	Match match = (Match) p.eContainer();
-//    	List<But> buts = Lists.newArrayList();
-//    	for (But but : match.getStates()) {
-//    		if (but.getOwner().equals(p)) {
-//				buts.add(but);
-//			}
-//		}
-//    	return buts;
-//    }
-    
-    public Object butsDuParticipant(Object p) {
-    	Match match = (Match) ((Participant) p).eContainer();
-    	List<But> buts = Lists.newArrayList();
-    	for (But but : match.getStates()) {
-    		if (but.getOwner().equals(p)) {
-				buts.add(but);
-			}
-		}
-    	return buts;
-    }
-    
     public Collection<EObject> butsDuParticipant(Participant p) {
     	Match match = (Match) p.eContainer();
     	List<EObject> buts = Lists.newArrayList();
-    	for (But but : match.getStates()) {
-    		if (but.getOwner().equals(p)) {
-				buts.add(but);
-			}
-		}
-    	return buts;
-    }
-    
-    public Object butsDuParticipant(EObject p) {
-    	Match match = (MatchImpl) p.eContainer();
-    	List<But> buts = Lists.newArrayList();
     	for (But but : match.getStates()) {
     		if (but.getOwner().equals(p)) {
 				buts.add(but);
