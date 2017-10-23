@@ -52,16 +52,17 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
             </borderedNodeMappings>
-            <style xsi:type="style:SquareDescription" labelExpression="[est.numéro+' : '+est.nom/]" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelExpression="[est.numéro+' : '+est.nom/]" labelPosition="node" resizeKind="NSEW" width="1" height="40">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="[est.numéro+' : '+est.nom/]" sizeComputationExpression="10" resizeKind="NSEW" workspacePath="/fr.steph.foot.matchs.design/icons/nantes.jpg">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[est.numéro+' : '+est.nom/]" sizeComputationExpression="" labelPosition="node" resizeKind="NSEW" width="12" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             <labelFormat>bold</labelFormat>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
         <edgeMappings xsi:type="description_2:BasicMessageMapping" name="Passe" semanticCandidatesExpression="feature:messages" sourceMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']" targetMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']" targetFinderExpression="service:getReceivingContext" sourceFinderExpression="service:getSendingContext" domainClass="matchs.Passe" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
