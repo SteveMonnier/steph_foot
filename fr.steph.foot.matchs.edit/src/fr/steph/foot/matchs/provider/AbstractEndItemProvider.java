@@ -62,6 +62,7 @@ public class AbstractEndItemProvider
 
 			addNamePropertyDescriptor(object);
 			addContextPropertyDescriptor(object);
+			addTempsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class AbstractEndItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Temps feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTempsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractEnd_temps_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractEnd_temps_feature", "_UI_AbstractEnd_type"),
+				 MatchsPackage.Literals.ABSTRACT_END__TEMPS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +161,7 @@ public class AbstractEndItemProvider
 
 		switch (notification.getFeatureID(AbstractEnd.class)) {
 			case MatchsPackage.ABSTRACT_END__NAME:
+			case MatchsPackage.ABSTRACT_END__TEMPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -541,14 +541,14 @@ public interface MatchsPackage extends EPackage {
 	int REMPLACEMENT_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.ExecutionImpl <em>Execution</em>}' class.
+	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.PossessionImpl <em>Possession</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.steph.foot.matchs.impl.ExecutionImpl
-	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getExecution()
+	 * @see fr.steph.foot.matchs.impl.PossessionImpl
+	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossession()
 	 * @generated
 	 */
-	int EXECUTION = 6;
+	int POSSESSION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -557,7 +557,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION__NAME = 0;
+	int POSSESSION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -566,7 +566,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION__OWNER = 1;
+	int POSSESSION__OWNER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' reference.
@@ -575,7 +575,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION__START = 2;
+	int POSSESSION__START = 2;
 
 	/**
 	 * The feature id for the '<em><b>End</b></em>' reference.
@@ -584,25 +584,25 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION__END = 3;
+	int POSSESSION__END = 3;
 
 	/**
-	 * The number of structural features of the '<em>Execution</em>' class.
+	 * The number of structural features of the '<em>Possession</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_FEATURE_COUNT = 4;
+	int POSSESSION_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Execution</em>' class.
+	 * The number of operations of the '<em>Possession</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_OPERATION_COUNT = 0;
+	int POSSESSION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.ButImpl <em>But</em>}' class.
@@ -779,13 +779,22 @@ public interface MatchsPackage extends EPackage {
 	int ABSTRACT_END__CONTEXT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_END__TEMPS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract End</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_END_FEATURE_COUNT = 2;
+	int ABSTRACT_END_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Abstract End</em>' class.
@@ -825,6 +834,15 @@ public interface MatchsPackage extends EPackage {
 	int ACTION_END__CONTEXT = ABSTRACT_END__CONTEXT;
 
 	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_END__TEMPS = ABSTRACT_END__TEMPS;
+
+	/**
 	 * The feature id for the '<em><b>Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -852,14 +870,14 @@ public interface MatchsPackage extends EPackage {
 	int ACTION_END_OPERATION_COUNT = ABSTRACT_END_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.ExecutionEndImpl <em>Execution End</em>}' class.
+	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.PossessionEndImpl <em>Possession End</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.steph.foot.matchs.impl.ExecutionEndImpl
-	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getExecutionEnd()
+	 * @see fr.steph.foot.matchs.impl.PossessionEndImpl
+	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossessionEnd()
 	 * @generated
 	 */
-	int EXECUTION_END = 11;
+	int POSSESSION_END = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -868,7 +886,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_END__NAME = ABSTRACT_END__NAME;
+	int POSSESSION_END__NAME = ABSTRACT_END__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference.
@@ -877,7 +895,16 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_END__CONTEXT = ABSTRACT_END__CONTEXT;
+	int POSSESSION_END__CONTEXT = ABSTRACT_END__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSSESSION_END__TEMPS = ABSTRACT_END__TEMPS;
 
 	/**
 	 * The feature id for the '<em><b>Execution</b></em>' reference.
@@ -886,25 +913,25 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_END__EXECUTION = ABSTRACT_END_FEATURE_COUNT + 0;
+	int POSSESSION_END__EXECUTION = ABSTRACT_END_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Execution End</em>' class.
+	 * The number of structural features of the '<em>Possession End</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_END_FEATURE_COUNT = ABSTRACT_END_FEATURE_COUNT + 1;
+	int POSSESSION_END_FEATURE_COUNT = ABSTRACT_END_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Execution End</em>' class.
+	 * The number of operations of the '<em>Possession End</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_END_OPERATION_COUNT = ABSTRACT_END_OPERATION_COUNT + 0;
+	int POSSESSION_END_OPERATION_COUNT = ABSTRACT_END_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.ButEndImpl <em>But End</em>}' class.
@@ -933,6 +960,15 @@ public interface MatchsPackage extends EPackage {
 	 * @ordered
 	 */
 	int BUT_END__CONTEXT = ABSTRACT_END__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUT_END__TEMPS = ABSTRACT_END__TEMPS;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' reference.
@@ -988,6 +1024,15 @@ public interface MatchsPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERACTION_USE_END__CONTEXT = ABSTRACT_END__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_USE_END__TEMPS = ABSTRACT_END__TEMPS;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1357,58 +1402,58 @@ public interface MatchsPackage extends EPackage {
 	EClass getRemplacement();
 
 	/**
-	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Execution <em>Execution</em>}'.
+	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Possession <em>Possession</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Execution</em>'.
-	 * @see fr.steph.foot.matchs.Execution
+	 * @return the meta object for class '<em>Possession</em>'.
+	 * @see fr.steph.foot.matchs.Possession
 	 * @generated
 	 */
-	EClass getExecution();
+	EClass getPossession();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Execution#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Possession#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fr.steph.foot.matchs.Execution#getName()
-	 * @see #getExecution()
+	 * @see fr.steph.foot.matchs.Possession#getName()
+	 * @see #getPossession()
 	 * @generated
 	 */
-	EAttribute getExecution_Name();
+	EAttribute getPossession_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Execution#getOwner <em>Owner</em>}'.
+	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Possession#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Owner</em>'.
-	 * @see fr.steph.foot.matchs.Execution#getOwner()
-	 * @see #getExecution()
+	 * @see fr.steph.foot.matchs.Possession#getOwner()
+	 * @see #getPossession()
 	 * @generated
 	 */
-	EReference getExecution_Owner();
+	EReference getPossession_Owner();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Execution#getStart <em>Start</em>}'.
+	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Possession#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Start</em>'.
-	 * @see fr.steph.foot.matchs.Execution#getStart()
-	 * @see #getExecution()
+	 * @see fr.steph.foot.matchs.Possession#getStart()
+	 * @see #getPossession()
 	 * @generated
 	 */
-	EReference getExecution_Start();
+	EReference getPossession_Start();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Execution#getEnd <em>End</em>}'.
+	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Possession#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>End</em>'.
-	 * @see fr.steph.foot.matchs.Execution#getEnd()
-	 * @see #getExecution()
+	 * @see fr.steph.foot.matchs.Possession#getEnd()
+	 * @see #getPossession()
 	 * @generated
 	 */
-	EReference getExecution_End();
+	EReference getPossession_End();
 
 	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.But <em>But</em>}'.
@@ -1562,6 +1607,17 @@ public interface MatchsPackage extends EPackage {
 	EReference getAbstractEnd_Context();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.AbstractEnd#getTemps <em>Temps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Temps</em>'.
+	 * @see fr.steph.foot.matchs.AbstractEnd#getTemps()
+	 * @see #getAbstractEnd()
+	 * @generated
+	 */
+	EAttribute getAbstractEnd_Temps();
+
+	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.ActionEnd <em>Action End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1583,25 +1639,25 @@ public interface MatchsPackage extends EPackage {
 	EReference getActionEnd_Message();
 
 	/**
-	 * Returns the meta object for class '{@link fr.steph.foot.matchs.ExecutionEnd <em>Execution End</em>}'.
+	 * Returns the meta object for class '{@link fr.steph.foot.matchs.PossessionEnd <em>Possession End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Execution End</em>'.
-	 * @see fr.steph.foot.matchs.ExecutionEnd
+	 * @return the meta object for class '<em>Possession End</em>'.
+	 * @see fr.steph.foot.matchs.PossessionEnd
 	 * @generated
 	 */
-	EClass getExecutionEnd();
+	EClass getPossessionEnd();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.ExecutionEnd#getExecution <em>Execution</em>}'.
+	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.PossessionEnd#getExecution <em>Execution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Execution</em>'.
-	 * @see fr.steph.foot.matchs.ExecutionEnd#getExecution()
-	 * @see #getExecutionEnd()
+	 * @see fr.steph.foot.matchs.PossessionEnd#getExecution()
+	 * @see #getPossessionEnd()
 	 * @generated
 	 */
-	EReference getExecutionEnd_Execution();
+	EReference getPossessionEnd_Execution();
 
 	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.ButEnd <em>But End</em>}'.
@@ -1947,14 +2003,14 @@ public interface MatchsPackage extends EPackage {
 		EClass REMPLACEMENT = eINSTANCE.getRemplacement();
 
 		/**
-		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.ExecutionImpl <em>Execution</em>}' class.
+		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.PossessionImpl <em>Possession</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.steph.foot.matchs.impl.ExecutionImpl
-		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getExecution()
+		 * @see fr.steph.foot.matchs.impl.PossessionImpl
+		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossession()
 		 * @generated
 		 */
-		EClass EXECUTION = eINSTANCE.getExecution();
+		EClass POSSESSION = eINSTANCE.getPossession();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1962,7 +2018,7 @@ public interface MatchsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXECUTION__NAME = eINSTANCE.getExecution_Name();
+		EAttribute POSSESSION__NAME = eINSTANCE.getPossession_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Owner</b></em>' reference feature.
@@ -1970,7 +2026,7 @@ public interface MatchsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXECUTION__OWNER = eINSTANCE.getExecution_Owner();
+		EReference POSSESSION__OWNER = eINSTANCE.getPossession_Owner();
 
 		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' reference feature.
@@ -1978,7 +2034,7 @@ public interface MatchsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXECUTION__START = eINSTANCE.getExecution_Start();
+		EReference POSSESSION__START = eINSTANCE.getPossession_Start();
 
 		/**
 		 * The meta object literal for the '<em><b>End</b></em>' reference feature.
@@ -1986,7 +2042,7 @@ public interface MatchsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXECUTION__END = eINSTANCE.getExecution_End();
+		EReference POSSESSION__END = eINSTANCE.getPossession_End();
 
 		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.ButImpl <em>But</em>}' class.
@@ -2107,6 +2163,14 @@ public interface MatchsPackage extends EPackage {
 		EReference ABSTRACT_END__CONTEXT = eINSTANCE.getAbstractEnd_Context();
 
 		/**
+		 * The meta object literal for the '<em><b>Temps</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_END__TEMPS = eINSTANCE.getAbstractEnd_Temps();
+
+		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.ActionEndImpl <em>Action End</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2125,14 +2189,14 @@ public interface MatchsPackage extends EPackage {
 		EReference ACTION_END__MESSAGE = eINSTANCE.getActionEnd_Message();
 
 		/**
-		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.ExecutionEndImpl <em>Execution End</em>}' class.
+		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.PossessionEndImpl <em>Possession End</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.steph.foot.matchs.impl.ExecutionEndImpl
-		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getExecutionEnd()
+		 * @see fr.steph.foot.matchs.impl.PossessionEndImpl
+		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossessionEnd()
 		 * @generated
 		 */
-		EClass EXECUTION_END = eINSTANCE.getExecutionEnd();
+		EClass POSSESSION_END = eINSTANCE.getPossessionEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Execution</b></em>' reference feature.
@@ -2140,7 +2204,7 @@ public interface MatchsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXECUTION_END__EXECUTION = eINSTANCE.getExecutionEnd_Execution();
+		EReference POSSESSION_END__EXECUTION = eINSTANCE.getPossessionEnd_Execution();
 
 		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.ButEndImpl <em>But End</em>}' class.

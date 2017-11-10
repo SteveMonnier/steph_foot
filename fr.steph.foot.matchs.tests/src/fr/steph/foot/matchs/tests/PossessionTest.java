@@ -2,8 +2,8 @@
  */
 package fr.steph.foot.matchs.tests;
 
-import fr.steph.foot.matchs.Execution;
 import fr.steph.foot.matchs.MatchsFactory;
+import fr.steph.foot.matchs.Possession;
 
 import junit.framework.TestCase;
 
@@ -11,19 +11,19 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Execution</b></em>'.
+ * A test case for the model object '<em><b>Possession</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionTest extends TestCase {
+public class PossessionTest extends TestCase {
 
 	/**
-	 * The fixture for this Execution test case.
+	 * The fixture for this Possession test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Execution fixture = null;
+	protected Possession fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class ExecutionTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ExecutionTest.class);
+		TestRunner.run(PossessionTest.class);
 	}
 
 	/**
-	 * Constructs a new Execution test case with the given name.
+	 * Constructs a new Possession test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionTest(String name) {
+	public PossessionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Execution test case.
+	 * Sets the fixture for this Possession test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Execution fixture) {
+	protected void setFixture(Possession fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Execution test case.
+	 * Returns the fixture for this Possession test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Execution getFixture() {
+	protected Possession getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class ExecutionTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(MatchsFactory.eINSTANCE.createExecution());
+		setFixture(MatchsFactory.eINSTANCE.createPossession());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class ExecutionTest extends TestCase {
 		setFixture(null);
 	}
 
-} //ExecutionTest
+} //PossessionTest

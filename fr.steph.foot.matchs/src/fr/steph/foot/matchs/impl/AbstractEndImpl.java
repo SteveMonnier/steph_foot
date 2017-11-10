@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fr.steph.foot.matchs.impl.AbstractEndImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.AbstractEndImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.impl.AbstractEndImpl#getTemps <em>Temps</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,6 +59,26 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected Participant context;
+
+	/**
+	 * The default value of the '{@link #getTemps() <em>Temps</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemps()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEMPS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTemps() <em>Temps</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemps()
+	 * @generated
+	 * @ordered
+	 */
+	protected String temps = TEMPS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +163,27 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTemps() {
+		return temps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTemps(String newTemps) {
+		String oldTemps = temps;
+		temps = newTemps;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.ABSTRACT_END__TEMPS, oldTemps, temps));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -150,6 +192,8 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 			case MatchsPackage.ABSTRACT_END__CONTEXT:
 				if (resolve) return getContext();
 				return basicGetContext();
+			case MatchsPackage.ABSTRACT_END__TEMPS:
+				return getTemps();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +211,9 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 				return;
 			case MatchsPackage.ABSTRACT_END__CONTEXT:
 				setContext((Participant)newValue);
+				return;
+			case MatchsPackage.ABSTRACT_END__TEMPS:
+				setTemps((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +233,9 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 			case MatchsPackage.ABSTRACT_END__CONTEXT:
 				setContext((Participant)null);
 				return;
+			case MatchsPackage.ABSTRACT_END__TEMPS:
+				setTemps(TEMPS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +252,8 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MatchsPackage.ABSTRACT_END__CONTEXT:
 				return context != null;
+			case MatchsPackage.ABSTRACT_END__TEMPS:
+				return TEMPS_EDEFAULT == null ? temps != null : !TEMPS_EDEFAULT.equals(temps);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +270,8 @@ public abstract class AbstractEndImpl extends MinimalEObjectImpl.Container imple
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", temps: ");
+		result.append(temps);
 		result.append(')');
 		return result.toString();
 	}

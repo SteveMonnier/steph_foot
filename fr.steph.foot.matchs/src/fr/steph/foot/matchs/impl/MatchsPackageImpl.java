@@ -7,8 +7,6 @@ import fr.steph.foot.matchs.Action;
 import fr.steph.foot.matchs.ActionEnd;
 import fr.steph.foot.matchs.But;
 import fr.steph.foot.matchs.ButEnd;
-import fr.steph.foot.matchs.Execution;
-import fr.steph.foot.matchs.ExecutionEnd;
 import fr.steph.foot.matchs.InteractionUse;
 import fr.steph.foot.matchs.InteractionUseEnd;
 import fr.steph.foot.matchs.Joueur;
@@ -17,6 +15,8 @@ import fr.steph.foot.matchs.MatchsFactory;
 import fr.steph.foot.matchs.MatchsPackage;
 import fr.steph.foot.matchs.Participant;
 import fr.steph.foot.matchs.Passe;
+import fr.steph.foot.matchs.Possession;
+import fr.steph.foot.matchs.PossessionEnd;
 import fr.steph.foot.matchs.Remplacement;
 import fr.steph.foot.matchs.Saison;
 import fr.steph.foot.matchs.TimedEvent;
@@ -83,7 +83,7 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass executionEClass = null;
+	private EClass possessionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,7 +118,7 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass executionEndEClass = null;
+	private EClass possessionEndEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -469,8 +469,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExecution() {
-		return executionEClass;
+	public EClass getPossession() {
+		return possessionEClass;
 	}
 
 	/**
@@ -478,8 +478,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExecution_Name() {
-		return (EAttribute)executionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPossession_Name() {
+		return (EAttribute)possessionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -487,8 +487,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecution_Owner() {
-		return (EReference)executionEClass.getEStructuralFeatures().get(1);
+	public EReference getPossession_Owner() {
+		return (EReference)possessionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -496,8 +496,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecution_Start() {
-		return (EReference)executionEClass.getEStructuralFeatures().get(2);
+	public EReference getPossession_Start() {
+		return (EReference)possessionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -505,8 +505,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecution_End() {
-		return (EReference)executionEClass.getEStructuralFeatures().get(3);
+	public EReference getPossession_End() {
+		return (EReference)possessionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -640,6 +640,15 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAbstractEnd_Temps() {
+		return (EAttribute)abstractEndEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getActionEnd() {
 		return actionEndEClass;
 	}
@@ -658,8 +667,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExecutionEnd() {
-		return executionEndEClass;
+	public EClass getPossessionEnd() {
+		return possessionEndEClass;
 	}
 
 	/**
@@ -667,8 +676,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecutionEnd_Execution() {
-		return (EReference)executionEndEClass.getEStructuralFeatures().get(0);
+	public EReference getPossessionEnd_Execution() {
+		return (EReference)possessionEndEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -805,11 +814,11 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		remplacementEClass = createEClass(REMPLACEMENT);
 
-		executionEClass = createEClass(EXECUTION);
-		createEAttribute(executionEClass, EXECUTION__NAME);
-		createEReference(executionEClass, EXECUTION__OWNER);
-		createEReference(executionEClass, EXECUTION__START);
-		createEReference(executionEClass, EXECUTION__END);
+		possessionEClass = createEClass(POSSESSION);
+		createEAttribute(possessionEClass, POSSESSION__NAME);
+		createEReference(possessionEClass, POSSESSION__OWNER);
+		createEReference(possessionEClass, POSSESSION__START);
+		createEReference(possessionEClass, POSSESSION__END);
 
 		butEClass = createEClass(BUT);
 		createEAttribute(butEClass, BUT__NAME);
@@ -827,12 +836,13 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		abstractEndEClass = createEClass(ABSTRACT_END);
 		createEAttribute(abstractEndEClass, ABSTRACT_END__NAME);
 		createEReference(abstractEndEClass, ABSTRACT_END__CONTEXT);
+		createEAttribute(abstractEndEClass, ABSTRACT_END__TEMPS);
 
 		actionEndEClass = createEClass(ACTION_END);
 		createEReference(actionEndEClass, ACTION_END__MESSAGE);
 
-		executionEndEClass = createEClass(EXECUTION_END);
-		createEReference(executionEndEClass, EXECUTION_END__EXECUTION);
+		possessionEndEClass = createEClass(POSSESSION_END);
+		createEReference(possessionEndEClass, POSSESSION_END__EXECUTION);
 
 		butEndEClass = createEClass(BUT_END);
 		createEReference(butEndEClass, BUT_END__STATE);
@@ -883,7 +893,7 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		remplacementEClass.getESuperTypes().add(this.getAction());
 		butEClass.getESuperTypes().add(this.getTimedEvent());
 		actionEndEClass.getESuperTypes().add(this.getAbstractEnd());
-		executionEndEClass.getESuperTypes().add(this.getAbstractEnd());
+		possessionEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		butEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		interactionUseEndEClass.getESuperTypes().add(this.getAbstractEnd());
 
@@ -899,7 +909,7 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		initEAttribute(getMatch_EquipeAdverse(), theEcorePackage.getEString(), "equipeAdverse", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_Participants(), this.getParticipant(), null, "participants", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMatch_Messages(), this.getAction(), null, "messages", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMatch_Executions(), this.getExecution(), null, "executions", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMatch_Executions(), this.getPossession(), null, "executions", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_States(), this.getBut(), null, "states", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_InteractionUses(), this.getInteractionUse(), null, "interactionUses", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_Ends(), this.getAbstractEnd(), null, "ends", null, 0, -1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -922,11 +932,11 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		initEClass(remplacementEClass, Remplacement.class, "Remplacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(executionEClass, Execution.class, "Execution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExecution_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Execution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecution_Owner(), this.getParticipant(), null, "owner", null, 1, 1, Execution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecution_Start(), this.getExecutionEnd(), null, "start", null, 1, 1, Execution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecution_End(), this.getExecutionEnd(), null, "end", null, 1, 1, Execution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(possessionEClass, Possession.class, "Possession", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPossession_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPossession_Owner(), this.getParticipant(), null, "owner", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPossession_Start(), this.getPossessionEnd(), null, "start", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPossession_End(), this.getPossessionEnd(), null, "end", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(butEClass, But.class, "But", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBut_Name(), theEcorePackage.getEString(), "name", null, 1, 1, But.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -944,12 +954,13 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		initEClass(abstractEndEClass, AbstractEnd.class, "AbstractEnd", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractEnd_Name(), theEcorePackage.getEString(), "name", null, 1, 1, AbstractEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractEnd_Context(), this.getParticipant(), null, "context", null, 0, 1, AbstractEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractEnd_Temps(), ecorePackage.getEString(), "temps", null, 0, 1, AbstractEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEndEClass, ActionEnd.class, "ActionEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionEnd_Message(), this.getAction(), null, "message", null, 1, 1, ActionEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(executionEndEClass, ExecutionEnd.class, "ExecutionEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExecutionEnd_Execution(), this.getExecution(), null, "execution", null, 1, 1, ExecutionEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(possessionEndEClass, PossessionEnd.class, "PossessionEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPossessionEnd_Execution(), this.getPossession(), null, "execution", null, 1, 1, PossessionEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(butEndEClass, ButEnd.class, "ButEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getButEnd_State(), this.getBut(), null, "state", null, 1, 1, ButEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

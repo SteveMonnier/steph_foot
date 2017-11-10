@@ -67,13 +67,13 @@ public interface MatchsFactory extends EFactory {
 	Remplacement createRemplacement();
 
 	/**
-	 * Returns a new object of class '<em>Execution</em>'.
+	 * Returns a new object of class '<em>Possession</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Execution</em>'.
+	 * @return a new object of class '<em>Possession</em>'.
 	 * @generated
 	 */
-	Execution createExecution();
+	Possession createPossession();
 
 	/**
 	 * Returns a new object of class '<em>But</em>'.
@@ -103,13 +103,13 @@ public interface MatchsFactory extends EFactory {
 	ActionEnd createActionEnd();
 
 	/**
-	 * Returns a new object of class '<em>Execution End</em>'.
+	 * Returns a new object of class '<em>Possession End</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Execution End</em>'.
+	 * @return a new object of class '<em>Possession End</em>'.
 	 * @generated
 	 */
-	ExecutionEnd createExecutionEnd();
+	PossessionEnd createPossessionEnd();
 
 	/**
 	 * Returns a new object of class '<em>But End</em>'.

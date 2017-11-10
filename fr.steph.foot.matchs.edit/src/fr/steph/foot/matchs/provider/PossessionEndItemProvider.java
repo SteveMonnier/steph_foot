@@ -3,8 +3,8 @@
 package fr.steph.foot.matchs.provider;
 
 
-import fr.steph.foot.matchs.ExecutionEnd;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.PossessionEnd;
 
 import java.util.Collection;
 import java.util.List;
@@ -16,19 +16,19 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link fr.steph.foot.matchs.ExecutionEnd} object.
+ * This is the item provider adapter for a {@link fr.steph.foot.matchs.PossessionEnd} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionEndItemProvider extends AbstractEndItemProvider {
+public class PossessionEndItemProvider extends AbstractEndItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionEndItemProvider(AdapterFactory adapterFactory) {
+	public PossessionEndItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,9 +59,9 @@ public class ExecutionEndItemProvider extends AbstractEndItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ExecutionEnd_execution_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutionEnd_execution_feature", "_UI_ExecutionEnd_type"),
-				 MatchsPackage.Literals.EXECUTION_END__EXECUTION,
+				 getString("_UI_PossessionEnd_execution_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PossessionEnd_execution_feature", "_UI_PossessionEnd_type"),
+				 MatchsPackage.Literals.POSSESSION_END__EXECUTION,
 				 true,
 				 false,
 				 true,
@@ -71,14 +71,14 @@ public class ExecutionEndItemProvider extends AbstractEndItemProvider {
 	}
 
 	/**
-	 * This returns ExecutionEnd.gif.
+	 * This returns PossessionEnd.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExecutionEnd"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PossessionEnd"));
 	}
 
 	/**
@@ -89,10 +89,10 @@ public class ExecutionEndItemProvider extends AbstractEndItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExecutionEnd)object).getName();
+		String label = ((PossessionEnd)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ExecutionEnd_type") :
-			getString("_UI_ExecutionEnd_type") + " " + label;
+			getString("_UI_PossessionEnd_type") :
+			getString("_UI_PossessionEnd_type") + " " + label;
 	}
 	
 

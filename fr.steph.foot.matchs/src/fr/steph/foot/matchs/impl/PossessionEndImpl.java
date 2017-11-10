@@ -2,9 +2,9 @@
  */
 package fr.steph.foot.matchs.impl;
 
-import fr.steph.foot.matchs.Execution;
-import fr.steph.foot.matchs.ExecutionEnd;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.Possession;
+import fr.steph.foot.matchs.PossessionEnd;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Execution End</b></em>'.
+ * An implementation of the model object '<em><b>Possession End</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.steph.foot.matchs.impl.ExecutionEndImpl#getExecution <em>Execution</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.impl.PossessionEndImpl#getExecution <em>Execution</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
+public class PossessionEndImpl extends AbstractEndImpl implements PossessionEnd {
 	/**
 	 * The cached value of the '{@link #getExecution() <em>Execution</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -35,14 +35,14 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	 * @generated
 	 * @ordered
 	 */
-	protected Execution execution;
+	protected Possession execution;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExecutionEndImpl() {
+	protected PossessionEndImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MatchsPackage.Literals.EXECUTION_END;
+		return MatchsPackage.Literals.POSSESSION_END;
 	}
 
 	/**
@@ -61,13 +61,13 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Execution getExecution() {
+	public Possession getExecution() {
 		if (execution != null && execution.eIsProxy()) {
 			InternalEObject oldExecution = (InternalEObject)execution;
-			execution = (Execution)eResolveProxy(oldExecution);
+			execution = (Possession)eResolveProxy(oldExecution);
 			if (execution != oldExecution) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MatchsPackage.EXECUTION_END__EXECUTION, oldExecution, execution));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MatchsPackage.POSSESSION_END__EXECUTION, oldExecution, execution));
 			}
 		}
 		return execution;
@@ -78,7 +78,7 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Execution basicGetExecution() {
+	public Possession basicGetExecution() {
 		return execution;
 	}
 
@@ -87,11 +87,11 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExecution(Execution newExecution) {
-		Execution oldExecution = execution;
+	public void setExecution(Possession newExecution) {
+		Possession oldExecution = execution;
 		execution = newExecution;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.EXECUTION_END__EXECUTION, oldExecution, execution));
+			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.POSSESSION_END__EXECUTION, oldExecution, execution));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MatchsPackage.EXECUTION_END__EXECUTION:
+			case MatchsPackage.POSSESSION_END__EXECUTION:
 				if (resolve) return getExecution();
 				return basicGetExecution();
 		}
@@ -117,8 +117,8 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MatchsPackage.EXECUTION_END__EXECUTION:
-				setExecution((Execution)newValue);
+			case MatchsPackage.POSSESSION_END__EXECUTION:
+				setExecution((Possession)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +132,8 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MatchsPackage.EXECUTION_END__EXECUTION:
-				setExecution((Execution)null);
+			case MatchsPackage.POSSESSION_END__EXECUTION:
+				setExecution((Possession)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,10 +147,10 @@ public class ExecutionEndImpl extends AbstractEndImpl implements ExecutionEnd {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MatchsPackage.EXECUTION_END__EXECUTION:
+			case MatchsPackage.POSSESSION_END__EXECUTION:
 				return execution != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ExecutionEndImpl
+} //PossessionEndImpl

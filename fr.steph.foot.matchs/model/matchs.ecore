@@ -23,7 +23,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="executions" upperBound="-1"
-        eType="#//Execution" containment="true"/>
+        eType="#//Possession" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//But" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interactionUses" upperBound="-1"
@@ -58,14 +58,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="réussi" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Remplacement" eSuperTypes="#//Action"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Execution">
+  <eClassifiers xsi:type="ecore:EClass" name="Possession">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents an interval of time in which a particapant is active executing some code."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Participant"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//ExecutionEnd"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//ExecutionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//PossessionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//PossessionEnd"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="But" eSuperTypes="#//TimedEvent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -96,14 +96,15 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Participant"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionEnd" eSuperTypes="#//AbstractEnd">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//Action"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExecutionEnd" eSuperTypes="#//AbstractEnd">
+  <eClassifiers xsi:type="ecore:EClass" name="PossessionEnd" eSuperTypes="#//AbstractEnd">
     <eStructuralFeatures xsi:type="ecore:EReference" name="execution" lowerBound="1"
-        eType="#//Execution"/>
+        eType="#//Possession"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ButEnd" eSuperTypes="#//AbstractEnd">
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//But"/>

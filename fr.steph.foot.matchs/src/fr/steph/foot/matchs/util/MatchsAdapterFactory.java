@@ -92,8 +92,8 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 				return createRemplacementAdapter();
 			}
 			@Override
-			public Adapter caseExecution(Execution object) {
-				return createExecutionAdapter();
+			public Adapter casePossession(Possession object) {
+				return createPossessionAdapter();
 			}
 			@Override
 			public Adapter caseBut(But object) {
@@ -112,8 +112,8 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 				return createActionEndAdapter();
 			}
 			@Override
-			public Adapter caseExecutionEnd(ExecutionEnd object) {
-				return createExecutionEndAdapter();
+			public Adapter casePossessionEnd(PossessionEnd object) {
+				return createPossessionEndAdapter();
 			}
 			@Override
 			public Adapter caseButEnd(ButEnd object) {
@@ -236,16 +236,16 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.steph.foot.matchs.Execution <em>Execution</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.steph.foot.matchs.Possession <em>Possession</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.steph.foot.matchs.Execution
+	 * @see fr.steph.foot.matchs.Possession
 	 * @generated
 	 */
-	public Adapter createExecutionAdapter() {
+	public Adapter createPossessionAdapter() {
 		return null;
 	}
 
@@ -306,16 +306,16 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.steph.foot.matchs.ExecutionEnd <em>Execution End</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.steph.foot.matchs.PossessionEnd <em>Possession End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.steph.foot.matchs.ExecutionEnd
+	 * @see fr.steph.foot.matchs.PossessionEnd
 	 * @generated
 	 */
-	public Adapter createExecutionEndAdapter() {
+	public Adapter createPossessionEndAdapter() {
 		return null;
 	}
 

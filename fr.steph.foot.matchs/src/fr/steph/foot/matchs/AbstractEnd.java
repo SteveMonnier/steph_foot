@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fr.steph.foot.matchs.AbstractEnd#getName <em>Name</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.AbstractEnd#getContext <em>Context</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.AbstractEnd#getTemps <em>Temps</em>}</li>
  * </ul>
  *
  * @see fr.steph.foot.matchs.MatchsPackage#getAbstractEnd()
@@ -77,5 +78,31 @@ public interface AbstractEnd extends EObject {
 	 * @generated
 	 */
 	void setContext(Participant value);
+
+	/**
+	 * Returns the value of the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Temps</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Temps</em>' attribute.
+	 * @see #setTemps(String)
+	 * @see fr.steph.foot.matchs.MatchsPackage#getAbstractEnd_Temps()
+	 * @model
+	 * @generated
+	 */
+	String getTemps();
+
+	/**
+	 * Sets the value of the '{@link fr.steph.foot.matchs.AbstractEnd#getTemps <em>Temps</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Temps</em>' attribute.
+	 * @see #getTemps()
+	 * @generated
+	 */
+	void setTemps(String value);
 
 } // AbstractEnd

@@ -107,9 +107,9 @@ public class MatchsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MatchsPackage.EXECUTION: {
-				Execution execution = (Execution)theEObject;
-				T result = caseExecution(execution);
+			case MatchsPackage.POSSESSION: {
+				Possession possession = (Possession)theEObject;
+				T result = casePossession(possession);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -139,10 +139,10 @@ public class MatchsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MatchsPackage.EXECUTION_END: {
-				ExecutionEnd executionEnd = (ExecutionEnd)theEObject;
-				T result = caseExecutionEnd(executionEnd);
-				if (result == null) result = caseAbstractEnd(executionEnd);
+			case MatchsPackage.POSSESSION_END: {
+				PossessionEnd possessionEnd = (PossessionEnd)theEObject;
+				T result = casePossessionEnd(possessionEnd);
+				if (result == null) result = caseAbstractEnd(possessionEnd);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -267,17 +267,17 @@ public class MatchsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Execution</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Possession</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Execution</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Possession</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExecution(Execution object) {
+	public T casePossession(Possession object) {
 		return null;
 	}
 
@@ -342,17 +342,17 @@ public class MatchsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Execution End</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Possession End</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Execution End</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Possession End</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExecutionEnd(ExecutionEnd object) {
+	public T casePossessionEnd(PossessionEnd object) {
 		return null;
 	}
 

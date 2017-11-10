@@ -52,6 +52,13 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
             </borderedNodeMappings>
+            <borderedNodeMappings xsi:type="description_2:ExecutionMapping" name="Possession" semanticCandidatesExpression="service:getDirectEventsOnCurrentParticipant" domainClass="matchs.Possession" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:end">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" showIcon="false" labelExpression="aql:self.start.temps+' - '+self.end.temps" resizeKind="NSEW" width="1" height="40">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
             <style xsi:type="style:SquareDescription" labelExpression="[est.numéro+' : '+est.nom/]" labelPosition="node" resizeKind="NSEW" width="1" height="40">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -144,6 +151,55 @@
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <startingEndPredecessor name="startingEndPredecessor"/>
+            <finishingEndPredecessor name="finishingEndPredecessor"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter possession du ballon" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+            <variable name="variable"/>
+            <viewVariable name="viewVariable"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainerOrSelf(Matmatchs::Match)">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="service:container.currentParticipant"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.PossessionEnd" referenceName="ends" variableName="startingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.PossessionEnd" referenceName="ends" variableName="finishingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newExecution">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:start"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:end"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move finishingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
+                  <parameters name="referenceOwner" value="var:self"/>
+                  <parameters name="referenceName" value="ends"/>
+                  <parameters name="element" value="var:end"/>
+                  <parameters name="predecessor" value="aql:finishingEndPredecessor.semanticEnd"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move startingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
+                  <parameters name="referenceOwner" value="var:self"/>
+                  <parameters name="referenceName" value="ends"/>
+                  <parameters name="element" value="var:start"/>
+                  <parameters name="predecessor" value="aql:startingEndPredecessor.semanticEnd"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                  <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="Adjust new execution position">
+                    <action href="../../org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@toolSections.6/@ownedTools[name='Reorder%20Executions%2C%20States%20Messages%2C%20InteractionUses']/@onEventMovedOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.2"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:startingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + self.execution.name"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

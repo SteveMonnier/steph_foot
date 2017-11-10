@@ -61,11 +61,11 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 			case MatchsPackage.JOUEUR: return createJoueur();
 			case MatchsPackage.PASSE: return createPasse();
 			case MatchsPackage.REMPLACEMENT: return createRemplacement();
-			case MatchsPackage.EXECUTION: return createExecution();
+			case MatchsPackage.POSSESSION: return createPossession();
 			case MatchsPackage.BUT: return createBut();
 			case MatchsPackage.INTERACTION_USE: return createInteractionUse();
 			case MatchsPackage.ACTION_END: return createActionEnd();
-			case MatchsPackage.EXECUTION_END: return createExecutionEnd();
+			case MatchsPackage.POSSESSION_END: return createPossessionEnd();
 			case MatchsPackage.BUT_END: return createButEnd();
 			case MatchsPackage.INTERACTION_USE_END: return createInteractionUseEnd();
 			case MatchsPackage.PARTICIPANT: return createParticipant();
@@ -129,9 +129,9 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Execution createExecution() {
-		ExecutionImpl execution = new ExecutionImpl();
-		return execution;
+	public Possession createPossession() {
+		PossessionImpl possession = new PossessionImpl();
+		return possession;
 	}
 
 	/**
@@ -169,9 +169,9 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionEnd createExecutionEnd() {
-		ExecutionEndImpl executionEnd = new ExecutionEndImpl();
-		return executionEnd;
+	public PossessionEnd createPossessionEnd() {
+		PossessionEndImpl possessionEnd = new PossessionEndImpl();
+		return possessionEnd;
 	}
 
 	/**

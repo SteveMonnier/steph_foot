@@ -5,11 +5,11 @@ package fr.steph.foot.matchs.impl;
 import fr.steph.foot.matchs.AbstractEnd;
 import fr.steph.foot.matchs.Action;
 import fr.steph.foot.matchs.But;
-import fr.steph.foot.matchs.Execution;
 import fr.steph.foot.matchs.InteractionUse;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.MatchsPackage;
 import fr.steph.foot.matchs.Participant;
+import fr.steph.foot.matchs.Possession;
 
 import java.util.Collection;
 
@@ -96,7 +96,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Execution> executions;
+	protected EList<Possession> executions;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
@@ -217,9 +217,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Execution> getExecutions() {
+	public EList<Possession> getExecutions() {
 		if (executions == null) {
-			executions = new EObjectContainmentEList<Execution>(Execution.class, this, MatchsPackage.MATCH__EXECUTIONS);
+			executions = new EObjectContainmentEList<Possession>(Possession.class, this, MatchsPackage.MATCH__EXECUTIONS);
 		}
 		return executions;
 	}
@@ -355,7 +355,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return;
 			case MatchsPackage.MATCH__EXECUTIONS:
 				getExecutions().clear();
-				getExecutions().addAll((Collection<? extends Execution>)newValue);
+				getExecutions().addAll((Collection<? extends Possession>)newValue);
 				return;
 			case MatchsPackage.MATCH__STATES:
 				getStates().clear();

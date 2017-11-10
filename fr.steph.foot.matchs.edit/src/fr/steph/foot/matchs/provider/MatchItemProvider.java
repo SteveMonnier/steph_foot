@@ -254,7 +254,7 @@ public class MatchItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MatchsPackage.Literals.MATCH__EXECUTIONS,
-				 MatchsFactory.eINSTANCE.createExecution()));
+				 MatchsFactory.eINSTANCE.createPossession()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -274,7 +274,7 @@ public class MatchItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MatchsPackage.Literals.MATCH__ENDS,
-				 MatchsFactory.eINSTANCE.createExecutionEnd()));
+				 MatchsFactory.eINSTANCE.createPossessionEnd()));
 
 		newChildDescriptors.add
 			(createChildParameter

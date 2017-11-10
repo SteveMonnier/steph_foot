@@ -94,7 +94,7 @@ public interface Match extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Executions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.steph.foot.matchs.Execution}.
+	 * The list contents are of type {@link fr.steph.foot.matchs.Possession}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Executions</em>' containment reference list isn't clear,
@@ -106,7 +106,7 @@ public interface Match extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Execution> getExecutions();
+	EList<Possession> getExecutions();
 
 	/**
 	 * Returns the value of the '<em><b>States</b></em>' containment reference list.

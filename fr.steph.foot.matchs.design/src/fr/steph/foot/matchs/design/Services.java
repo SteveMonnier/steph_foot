@@ -3,11 +3,11 @@ package fr.steph.foot.matchs.design;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
-
 import com.google.common.collect.Lists;
 
 import fr.steph.foot.matchs.AbstractEnd;
@@ -19,6 +19,8 @@ import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.Participant;
 import fr.steph.foot.matchs.Passe;
+import fr.steph.foot.matchs.Possession;
+import fr.steph.foot.matchs.PossessionEnd;
 import fr.steph.foot.matchs.Saison;
 
 /**
@@ -149,6 +151,12 @@ public class Services {
                     continue;
                 }
 
+                if (isStartingPossessionEnd(end)) {
+                    PossessionEnd execEnd = (PossessionEnd) end;
+                    result.add(new EventContext(ancestors.peek(), execEnd.getExecution(), true, ancestors.size() + 1));
+                    ancestors.push(execEnd.getExecution());
+                }
+
                 if (isStartingStateEnd(end)) {
                     ButEnd execEnd = (ButEnd) end;
                     result.add(new EventContext(ancestors.peek(), execEnd.getState(), true, ancestors.size() + 1));
@@ -163,6 +171,12 @@ public class Services {
                     }
                 }
 
+
+                if (isFinishingPossessionEnd(end)) {
+                	PossessionEnd execEnd = (PossessionEnd) end;
+                    ancestors.pop();
+                    result.add(new EventContext(ancestors.peek(), execEnd.getExecution(), false, ancestors.size() + 1));
+                }
                 if (isFinishingStateEnd(end)) {
                 	ButEnd execEnd = (ButEnd) end;
                     ancestors.pop();
@@ -170,6 +184,24 @@ public class Services {
                 }
             }
             return result;
+        }
+    }
+
+    public boolean isStartingPossessionEnd(AbstractEnd end) {
+        if (end instanceof PossessionEnd) {
+        	PossessionEnd ee = (PossessionEnd) end;
+            return ee.getExecution() != null && ee.getExecution().getStart() == end;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isFinishingPossessionEnd(AbstractEnd end) {
+        if (end instanceof PossessionEnd) {
+        	PossessionEnd ee = (PossessionEnd) end;
+            return ee.getExecution() != null && ee.getExecution().getEnd() == end;
+        } else {
+            return false;
         }
     }
 
@@ -207,5 +239,55 @@ public class Services {
 			}
 		}
     	return buts;
+    }
+
+    public Collection<EObject> getDirectEventsOnCurrentParticipant(EObject self) {
+        return getDirectEventsOn(currentParticipant(self), self);
+    }
+
+    /**
+     * Computes the semantic elements corresponding to the events directly below
+     * the specified parent on a given lifelines. This is necessary because the
+     * VSM expects a tree-like structure for mappings, but in an 'Interactions'
+     * model, the events corresponding to the start/finish of
+     * execution/messages/etc. are stored in a linear structure.
+     * 
+     * @param context
+     *            the participant/lifeline on which to look.
+     * @param parent
+     *            the semantic element of the parent event.
+     * @return the semantic elements of all the direct sub-events of
+     *         <code>parent</code> on the given participant. The order is not
+     *         specified.
+     */
+    public Collection<EObject> getDirectEventsOn(Participant context, EObject parent) {
+        List<EventContext> structure = computeContainmentStructure(context);
+        LinkedHashSet<EObject> events = new LinkedHashSet<EObject>();
+        for (EventContext ec : structure) {
+            if (ec.getParent().equals(parent)) {
+                events.add(ec.getElement());
+            }
+        }
+        List<EObject> result = new ArrayList<EObject>();
+        for (EObject event : events) {
+            if (event != parent) {
+                result.add(event);
+            }
+        }
+        return result;
+    }
+
+    public Participant currentParticipant(EObject self) {
+        if (self instanceof Participant) {
+            return (Participant) self;
+        } else if (self instanceof AbstractEnd) {
+            return ((AbstractEnd) self).getContext();
+        } else if (self instanceof Possession) {
+            return ((Possession) self).getOwner();
+        } else if (self instanceof But) {
+            return ((But) self).getOwner();
+        } else {
+            return null;
+        }
     }
 }

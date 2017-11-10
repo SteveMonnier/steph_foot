@@ -7,6 +7,7 @@ import fr.steph.foot.matchs.ActionEnd;
 import fr.steph.foot.matchs.MatchsPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 

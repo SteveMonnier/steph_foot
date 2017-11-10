@@ -2,18 +2,18 @@
  */
 package fr.steph.foot.matchs.tests;
 
-import fr.steph.foot.matchs.ExecutionEnd;
 import fr.steph.foot.matchs.MatchsFactory;
+import fr.steph.foot.matchs.PossessionEnd;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Execution End</b></em>'.
+ * A test case for the model object '<em><b>Possession End</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionEndTest extends AbstractEndTest {
+public class PossessionEndTest extends AbstractEndTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class ExecutionEndTest extends AbstractEndTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ExecutionEndTest.class);
+		TestRunner.run(PossessionEndTest.class);
 	}
 
 	/**
-	 * Constructs a new Execution End test case with the given name.
+	 * Constructs a new Possession End test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionEndTest(String name) {
+	public PossessionEndTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Execution End test case.
+	 * Returns the fixture for this Possession End test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected ExecutionEnd getFixture() {
-		return (ExecutionEnd)fixture;
+	protected PossessionEnd getFixture() {
+		return (PossessionEnd)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ExecutionEndTest extends AbstractEndTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(MatchsFactory.eINSTANCE.createExecutionEnd());
+		setFixture(MatchsFactory.eINSTANCE.createPossessionEnd());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class ExecutionEndTest extends AbstractEndTest {
 		setFixture(null);
 	}
 
-} //ExecutionEndTest
+} //PossessionEndTest

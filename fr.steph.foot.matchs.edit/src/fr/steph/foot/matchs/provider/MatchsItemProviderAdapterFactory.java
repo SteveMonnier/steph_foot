@@ -187,26 +187,26 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.Execution} instances.
+	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.Possession} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExecutionItemProvider executionItemProvider;
+	protected PossessionItemProvider possessionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.steph.foot.matchs.Execution}.
+	 * This creates an adapter for a {@link fr.steph.foot.matchs.Possession}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createExecutionAdapter() {
-		if (executionItemProvider == null) {
-			executionItemProvider = new ExecutionItemProvider(this);
+	public Adapter createPossessionAdapter() {
+		if (possessionItemProvider == null) {
+			possessionItemProvider = new PossessionItemProvider(this);
 		}
 
-		return executionItemProvider;
+		return possessionItemProvider;
 	}
 
 	/**
@@ -279,26 +279,26 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.ExecutionEnd} instances.
+	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.PossessionEnd} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExecutionEndItemProvider executionEndItemProvider;
+	protected PossessionEndItemProvider possessionEndItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.steph.foot.matchs.ExecutionEnd}.
+	 * This creates an adapter for a {@link fr.steph.foot.matchs.PossessionEnd}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createExecutionEndAdapter() {
-		if (executionEndItemProvider == null) {
-			executionEndItemProvider = new ExecutionEndItemProvider(this);
+	public Adapter createPossessionEndAdapter() {
+		if (possessionEndItemProvider == null) {
+			possessionEndItemProvider = new PossessionEndItemProvider(this);
 		}
 
-		return executionEndItemProvider;
+		return possessionEndItemProvider;
 	}
 
 	/**
@@ -474,11 +474,11 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 		if (joueurItemProvider != null) joueurItemProvider.dispose();
 		if (passeItemProvider != null) passeItemProvider.dispose();
 		if (remplacementItemProvider != null) remplacementItemProvider.dispose();
-		if (executionItemProvider != null) executionItemProvider.dispose();
+		if (possessionItemProvider != null) possessionItemProvider.dispose();
 		if (butItemProvider != null) butItemProvider.dispose();
 		if (interactionUseItemProvider != null) interactionUseItemProvider.dispose();
 		if (actionEndItemProvider != null) actionEndItemProvider.dispose();
-		if (executionEndItemProvider != null) executionEndItemProvider.dispose();
+		if (possessionEndItemProvider != null) possessionEndItemProvider.dispose();
 		if (butEndItemProvider != null) butEndItemProvider.dispose();
 		if (interactionUseEndItemProvider != null) interactionUseEndItemProvider.dispose();
 		if (participantItemProvider != null) participantItemProvider.dispose();

@@ -5,21 +5,21 @@ package fr.steph.foot.matchs;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Execution End</b></em>'.
+ * A representation of the model object '<em><b>Possession End</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.steph.foot.matchs.ExecutionEnd#getExecution <em>Execution</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.PossessionEnd#getExecution <em>Execution</em>}</li>
  * </ul>
  *
- * @see fr.steph.foot.matchs.MatchsPackage#getExecutionEnd()
+ * @see fr.steph.foot.matchs.MatchsPackage#getPossessionEnd()
  * @model
  * @generated
  */
-public interface ExecutionEnd extends AbstractEnd {
+public interface PossessionEnd extends AbstractEnd {
 	/**
 	 * Returns the value of the '<em><b>Execution</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -29,21 +29,21 @@ public interface ExecutionEnd extends AbstractEnd {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Execution</em>' reference.
-	 * @see #setExecution(Execution)
-	 * @see fr.steph.foot.matchs.MatchsPackage#getExecutionEnd_Execution()
+	 * @see #setExecution(Possession)
+	 * @see fr.steph.foot.matchs.MatchsPackage#getPossessionEnd_Execution()
 	 * @model required="true"
 	 * @generated
 	 */
-	Execution getExecution();
+	Possession getExecution();
 
 	/**
-	 * Sets the value of the '{@link fr.steph.foot.matchs.ExecutionEnd#getExecution <em>Execution</em>}' reference.
+	 * Sets the value of the '{@link fr.steph.foot.matchs.PossessionEnd#getExecution <em>Execution</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Execution</em>' reference.
 	 * @see #getExecution()
 	 * @generated
 	 */
-	void setExecution(Execution value);
+	void setExecution(Possession value);
 
-} // ExecutionEnd
+} // PossessionEnd

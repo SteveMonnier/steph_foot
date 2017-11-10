@@ -3,8 +3,8 @@
 package fr.steph.foot.matchs.provider;
 
 
-import fr.steph.foot.matchs.Execution;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.Possession;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.steph.foot.matchs.Execution} object.
+ * This is the item provider adapter for a {@link fr.steph.foot.matchs.Possession} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionItemProvider 
+public class PossessionItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class ExecutionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionItemProvider(AdapterFactory adapterFactory) {
+	public PossessionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,9 +79,9 @@ public class ExecutionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Execution_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_name_feature", "_UI_Execution_type"),
-				 MatchsPackage.Literals.EXECUTION__NAME,
+				 getString("_UI_Possession_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Possession_name_feature", "_UI_Possession_type"),
+				 MatchsPackage.Literals.POSSESSION__NAME,
 				 true,
 				 false,
 				 false,
@@ -101,9 +101,9 @@ public class ExecutionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Execution_owner_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_owner_feature", "_UI_Execution_type"),
-				 MatchsPackage.Literals.EXECUTION__OWNER,
+				 getString("_UI_Possession_owner_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Possession_owner_feature", "_UI_Possession_type"),
+				 MatchsPackage.Literals.POSSESSION__OWNER,
 				 true,
 				 false,
 				 true,
@@ -123,9 +123,9 @@ public class ExecutionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Execution_start_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_start_feature", "_UI_Execution_type"),
-				 MatchsPackage.Literals.EXECUTION__START,
+				 getString("_UI_Possession_start_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Possession_start_feature", "_UI_Possession_type"),
+				 MatchsPackage.Literals.POSSESSION__START,
 				 true,
 				 false,
 				 true,
@@ -145,9 +145,9 @@ public class ExecutionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Execution_end_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_end_feature", "_UI_Execution_type"),
-				 MatchsPackage.Literals.EXECUTION__END,
+				 getString("_UI_Possession_end_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Possession_end_feature", "_UI_Possession_type"),
+				 MatchsPackage.Literals.POSSESSION__END,
 				 true,
 				 false,
 				 true,
@@ -157,14 +157,14 @@ public class ExecutionItemProvider
 	}
 
 	/**
-	 * This returns Execution.gif.
+	 * This returns Possession.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Execution"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Possession"));
 	}
 
 	/**
@@ -175,10 +175,10 @@ public class ExecutionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Execution)object).getName();
+		String label = ((Possession)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Execution_type") :
-			getString("_UI_Execution_type") + " " + label;
+			getString("_UI_Possession_type") :
+			getString("_UI_Possession_type") + " " + label;
 	}
 	
 
@@ -193,8 +193,8 @@ public class ExecutionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Execution.class)) {
-			case MatchsPackage.EXECUTION__NAME:
+		switch (notification.getFeatureID(Possession.class)) {
+			case MatchsPackage.POSSESSION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
