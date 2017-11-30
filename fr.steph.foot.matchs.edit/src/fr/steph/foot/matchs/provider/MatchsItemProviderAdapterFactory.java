@@ -371,6 +371,29 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.MixEnd} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MixEndItemProvider mixEndItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.steph.foot.matchs.MixEnd}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMixEndAdapter() {
+		if (mixEndItemProvider == null) {
+			mixEndItemProvider = new MixEndItemProvider(this);
+		}
+
+		return mixEndItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -482,6 +505,7 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 		if (butEndItemProvider != null) butEndItemProvider.dispose();
 		if (interactionUseEndItemProvider != null) interactionUseEndItemProvider.dispose();
 		if (participantItemProvider != null) participantItemProvider.dispose();
+		if (mixEndItemProvider != null) mixEndItemProvider.dispose();
 	}
 
 }

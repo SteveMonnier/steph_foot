@@ -172,6 +172,15 @@ public class MatchsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MatchsPackage.MIX_END: {
+				MixEnd mixEnd = (MixEnd)theEObject;
+				T result = caseMixEnd(mixEnd);
+				if (result == null) result = caseActionEnd(mixEnd);
+				if (result == null) result = casePossessionEnd(mixEnd);
+				if (result == null) result = caseAbstractEnd(mixEnd);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -413,6 +422,21 @@ public class MatchsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTimedEvent(TimedEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mix End</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mix End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixEnd(MixEnd object) {
 		return null;
 	}
 

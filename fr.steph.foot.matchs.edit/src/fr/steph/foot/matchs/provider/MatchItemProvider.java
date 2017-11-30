@@ -285,6 +285,11 @@ public class MatchItemProvider
 			(createChildParameter
 				(MatchsPackage.Literals.MATCH__ENDS,
 				 MatchsFactory.eINSTANCE.createInteractionUseEnd()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MatchsPackage.Literals.MATCH__ENDS,
+				 MatchsFactory.eINSTANCE.createMixEnd()));
 	}
 
 	/**

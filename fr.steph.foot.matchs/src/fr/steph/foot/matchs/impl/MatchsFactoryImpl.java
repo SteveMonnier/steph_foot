@@ -69,6 +69,7 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 			case MatchsPackage.BUT_END: return createButEnd();
 			case MatchsPackage.INTERACTION_USE_END: return createInteractionUseEnd();
 			case MatchsPackage.PARTICIPANT: return createParticipant();
+			case MatchsPackage.MIX_END: return createMixEnd();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -202,6 +203,16 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 	public Participant createParticipant() {
 		ParticipantImpl participant = new ParticipantImpl();
 		return participant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MixEnd createMixEnd() {
+		MixEndImpl mixEnd = new MixEndImpl();
+		return mixEnd;
 	}
 
 	/**

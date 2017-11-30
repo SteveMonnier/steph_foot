@@ -13,6 +13,7 @@ import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.MatchsFactory;
 import fr.steph.foot.matchs.MatchsPackage;
+import fr.steph.foot.matchs.MixEnd;
 import fr.steph.foot.matchs.Participant;
 import fr.steph.foot.matchs.Passe;
 import fr.steph.foot.matchs.Possession;
@@ -147,6 +148,13 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * @generated
 	 */
 	private EClass timedEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mixEndEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -757,6 +765,15 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMixEnd() {
+		return mixEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MatchsFactory getMatchsFactory() {
 		return (MatchsFactory)getEFactoryInstance();
 	}
@@ -855,6 +872,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		timedEventEClass = createEClass(TIMED_EVENT);
 		createEAttribute(timedEventEClass, TIMED_EVENT__TEMPS);
+
+		mixEndEClass = createEClass(MIX_END);
 	}
 
 	/**
@@ -896,6 +915,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		possessionEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		butEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		interactionUseEndEClass.getESuperTypes().add(this.getAbstractEnd());
+		mixEndEClass.getESuperTypes().add(this.getActionEnd());
+		mixEndEClass.getESuperTypes().add(this.getPossessionEnd());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(saisonEClass, Saison.class, "Saison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -973,6 +994,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		initEClass(timedEventEClass, TimedEvent.class, "TimedEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimedEvent_Temps(), theEcorePackage.getEString(), "temps", null, 0, 1, TimedEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mixEndEClass, MixEnd.class, "MixEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

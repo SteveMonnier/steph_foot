@@ -139,6 +139,15 @@ public interface MatchsFactory extends EFactory {
 	Participant createParticipant();
 
 	/**
+	 * Returns a new object of class '<em>Mix End</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mix End</em>'.
+	 * @generated
+	 */
+	MixEnd createMixEnd();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

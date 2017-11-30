@@ -1100,6 +1100,80 @@ public interface MatchsPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.MixEndImpl <em>Mix End</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.steph.foot.matchs.impl.MixEndImpl
+	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getMixEnd()
+	 * @generated
+	 */
+	int MIX_END = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END__NAME = ACTION_END__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END__CONTEXT = ACTION_END__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Temps</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END__TEMPS = ACTION_END__TEMPS;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END__MESSAGE = ACTION_END__MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Execution</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END__EXECUTION = ACTION_END_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mix End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END_FEATURE_COUNT = ACTION_END_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Mix End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIX_END_OPERATION_COUNT = ACTION_END_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Saison <em>Saison</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1744,6 +1818,16 @@ public interface MatchsPackage extends EPackage {
 	EAttribute getTimedEvent_Temps();
 
 	/**
+	 * Returns the meta object for class '{@link fr.steph.foot.matchs.MixEnd <em>Mix End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mix End</em>'.
+	 * @see fr.steph.foot.matchs.MixEnd
+	 * @generated
+	 */
+	EClass getMixEnd();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2277,6 +2361,16 @@ public interface MatchsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIMED_EVENT__TEMPS = eINSTANCE.getTimedEvent_Temps();
+
+		/**
+		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.MixEndImpl <em>Mix End</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.steph.foot.matchs.impl.MixEndImpl
+		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getMixEnd()
+		 * @generated
+		 */
+		EClass MIX_END = eINSTANCE.getMixEnd();
 
 	}
 

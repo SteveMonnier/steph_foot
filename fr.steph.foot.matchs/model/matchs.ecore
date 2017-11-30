@@ -119,4 +119,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="TimedEvent" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MixEnd" eSuperTypes="#//ActionEnd #//PossessionEnd"/>
 </ecore:EPackage>
