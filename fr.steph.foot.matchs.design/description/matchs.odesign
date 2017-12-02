@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:description_3="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" name="matchs" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:description_3="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" name="matchs" version="12.0.0.2017041100">
   <ownedViewpoints name="Matchs" modelFileExtension="matchs">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Equipe" domainClass="matchs.Saison" enablePopupBars="true">
       <metamodel href="../../fr.steph.foot.matchs/model/matchs.ecore#/"/>
@@ -178,6 +178,24 @@
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd1"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation/>
+                      </buttons>
+                      <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                        <initialOperation/>
+                      </buttons>
+                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Passe%20réussi2']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.3/@groups.0"/>
+                      <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Passe" semanticCandidateExpression="var:self">
+                        <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </groups>
+                    </subModelOperations>
                   </subModelOperations>
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd1">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
@@ -210,6 +228,24 @@
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:sourceVariable.oclAsType(matchs::Possession).end"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation/>
+                      </buttons>
+                      <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                        <initialOperation/>
+                      </buttons>
+                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Passe%20réussi2']/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.3/@groups.0"/>
+                      <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Passe" semanticCandidateExpression="var:self">
+                        <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </groups>
+                    </subModelOperations>
                   </subModelOperations>
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.oclAsType(matchs::Possession).end">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
