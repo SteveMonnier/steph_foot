@@ -53,7 +53,7 @@
               </style>
             </borderedNodeMappings>
             <borderedNodeMappings xsi:type="description_2:ExecutionMapping" name="Possession" semanticCandidatesExpression="service:getDirectEventsOnCurrentParticipant" domainClass="matchs.Possession" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:end">
-              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" showIcon="false" labelExpression="aql:self.start.temps+' - '+self.end.temps" resizeKind="NSEW" width="1" height="40">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" showIcon="false" labelExpression="aql:self.start.temps+' - '+self.end.temps" resizeKind="NSEW" width="1" height="10">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -167,38 +167,72 @@
             <targetViewVariable name="targetViewVariable"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.eContainer()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="sendingEnd1">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:sourceVariable"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:sourceVariable.oclIsKindOf(matchs::Participant)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="sendingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:sourceVariable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Passe" referenceName="messages" variableName="passe">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                  </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Passe" referenceName="messages" variableName="passe">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd1"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd1">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:sourceVariable.oclIsKindOf(matchs::Possession)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Passe" referenceName="messages" variableName="passe">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:sourceVariable.oclAsType(matchs::Possession).end"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.oclAsType(matchs::Possession).end">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

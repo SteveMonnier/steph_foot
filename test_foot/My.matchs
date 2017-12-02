@@ -15,10 +15,19 @@
     <participants est="//@joueurs.0"/>
     <participants est="//@joueurs.1"/>
     <messages xsi:type="matchs:Passe" sendingEnd="//@ownedInteractions.1/@ends.0" receivingEnd="//@ownedInteractions.1/@ends.1" réussi="true"/>
+    <messages xsi:type="matchs:Passe" sendingEnd="//@ownedInteractions.1/@ends.2" receivingEnd="//@ownedInteractions.1/@ends.3" réussi="true"/>
+    <messages xsi:type="matchs:Passe" sendingEnd="//@ownedInteractions.1/@ends.5" receivingEnd="//@ownedInteractions.1/@ends.6" réussi="true"/>
     <executions name="e1" owner="//@ownedInteractions.1/@participants.1" start="//@ownedInteractions.1/@ends.1" end="//@ownedInteractions.1/@ends.2"/>
+    <executions name="e2" owner="//@ownedInteractions.1/@participants.0" start="//@ownedInteractions.1/@ends.3" end="//@ownedInteractions.1/@ends.4"/>
+    <executions name="e3" owner="//@ownedInteractions.1/@participants.1" start="//@ownedInteractions.1/@ends.6" end="//@ownedInteractions.1/@ends.7"/>
     <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.1/@participants.0" message="//@ownedInteractions.1/@messages.0"/>
     <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.1/@participants.1" message="//@ownedInteractions.1/@messages.0" execution="//@ownedInteractions.1/@executions.0"/>
-    <ends xsi:type="matchs:MixEnd" name="finishe1" context="//@ownedInteractions.1/@participants.1" execution="//@ownedInteractions.1/@executions.0"/>
+    <ends xsi:type="matchs:MixEnd" name="finishe1" context="//@ownedInteractions.1/@participants.1" message="//@ownedInteractions.1/@messages.1" execution="//@ownedInteractions.1/@executions.0"/>
+    <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.1/@participants.0" message="//@ownedInteractions.1/@messages.1" execution="//@ownedInteractions.1/@executions.1"/>
+    <ends xsi:type="matchs:MixEnd" name="finishe2" context="//@ownedInteractions.1/@participants.0" execution="//@ownedInteractions.1/@executions.1"/>
+    <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.1/@participants.0" message="//@ownedInteractions.1/@messages.2"/>
+    <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.1/@participants.1" message="//@ownedInteractions.1/@messages.2" execution="//@ownedInteractions.1/@executions.2"/>
+    <ends xsi:type="matchs:MixEnd" name="finishe3" context="//@ownedInteractions.1/@participants.1" execution="//@ownedInteractions.1/@executions.2"/>
   </ownedInteractions>
   <joueurs nom="Batman" numéro="10" participeA="//@ownedInteractions.0/@participants.0 //@ownedInteractions.1/@participants.0"/>
   <joueurs nom="Robin" numéro="11" participeA="//@ownedInteractions.0/@participants.1 //@ownedInteractions.1/@participants.1"/>
