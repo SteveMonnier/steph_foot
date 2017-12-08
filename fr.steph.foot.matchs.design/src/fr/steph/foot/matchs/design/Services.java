@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.sample.interactions.Interaction;
+import org.eclipse.sirius.sample.interactions.Message;
+
 import com.google.common.collect.Lists;
 
 import fr.steph.foot.matchs.AbstractEnd;
@@ -289,5 +292,15 @@ public class Services {
         } else {
             return null;
         }
+    }
+
+    public Collection<EObject> interceptionPerteSemanticCandidates(Match m) {
+        Collection<EObject> result = Lists.newArrayList();
+        for (Action msg : m.getMessages()) {
+            if ((msg.getSendingEnd() == null && msg.getReceivingEnd() != null) || (msg.getSendingEnd() != null && msg.getReceivingEnd() == null)) {
+                result.add(msg);
+            }
+        }
+        return result;
     }
 }

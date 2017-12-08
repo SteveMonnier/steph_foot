@@ -53,7 +53,7 @@
               </style>
             </borderedNodeMappings>
             <borderedNodeMappings xsi:type="description_2:ExecutionMapping" name="Possession" semanticCandidatesExpression="service:getDirectEventsOnCurrentParticipant" domainClass="matchs.Possession" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:end">
-              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" showIcon="false" labelExpression="aql:self.start.temps+' - '+self.end.temps" resizeKind="NSEW" width="1" height="10">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" showIcon="false" labelExpression="" resizeKind="NSEW" width="1" height="5">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -72,7 +72,15 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings xsi:type="description_2:BasicMessageMapping" name="Passe" semanticCandidatesExpression="feature:messages" sourceMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline'] //@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" targetMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline'] //@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" targetFinderExpression="service:getReceivingContext" sourceFinderExpression="service:getSendingContext" domainClass="matchs.Passe" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
+        <nodeMappings name="Interception-Perte" semanticCandidatesExpression="service:interceptionPerteSemanticCandidates" domainClass="matchs.Passe">
+          <deletionDescription href="../../org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@toolSections.3/@ownedTools[name='Delete%20Message']"/>
+          <style xsi:type="style:DotDescription" labelExpression="" tooltipExpression="Lost end" sizeComputationExpression="1" resizeKind="NSEW" strokeSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings xsi:type="description_2:BasicMessageMapping" name="Passe" semanticCandidatesExpression="feature:messages" sourceMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline'] //@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession'] //@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Interception-Perte']" targetMapping="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline'] //@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession'] //@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Interception-Perte']" targetFinderExpression="service:getReceivingContext" sourceFinderExpression="service:getSendingContext" domainClass="matchs.Passe" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
@@ -98,35 +106,6 @@
               </firstModelOperations>
             </initialOperation>
             <predecessor name="predecessor"/>
-          </ownedTools>
-          <ownedTools xsi:type="tool_2:MessageCreationTool" name="Ajouter Passe réussi" edgeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@edgeMappings[name='Passe']">
-            <sourceVariable name="sourceVariable"/>
-            <targetVariable name="targetVariable"/>
-            <sourceViewVariable name="sourceViewVariable"/>
-            <targetViewVariable name="targetViewVariable"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.eContainer()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ActionEnd" referenceName="ends" variableName="sendingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:sourceVariable"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ActionEnd" referenceName="ends" variableName="receivingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Passe" referenceName="messages" variableName="passe">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-            <startingEndPredecessor name="startingEndPredecessor"/>
-            <finishingEndPredecessor name="finishingEndPredecessor"/>
           </ownedTools>
           <ownedTools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter possession du ballon" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
             <variable name="variable"/>
@@ -160,7 +139,7 @@
             <startingEndPredecessor name="startingEndPredecessor"/>
             <finishingEndPredecessor name="finishingEndPredecessor"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:MessageCreationTool" name="Ajouter Passe réussi2" edgeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@edgeMappings[name='Passe']">
+          <ownedTools xsi:type="tool_2:MessageCreationTool" name="Ajouter Passe" edgeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@edgeMappings[name='Passe']">
             <sourceVariable name="sourceVariable"/>
             <targetVariable name="targetVariable"/>
             <sourceViewVariable name="sourceViewVariable"/>
@@ -185,7 +164,7 @@
                       <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                         <initialOperation/>
                       </buttons>
-                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Passe%20réussi2']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.3/@groups.0"/>
+                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Passe']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.3/@groups.0"/>
                       <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Passe" semanticCandidateExpression="var:self">
                         <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
                           <initialOperation>
@@ -235,7 +214,7 @@
                       <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                         <initialOperation/>
                       </buttons>
-                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Passe%20réussi2']/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.3/@groups.0"/>
+                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Passe']/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.3/@groups.0"/>
                       <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Passe" semanticCandidateExpression="var:self">
                         <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
                           <initialOperation>
@@ -268,6 +247,154 @@
                   </subModelOperations>
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <startingEndPredecessor name="startingEndPredecessor"/>
+            <finishingEndPredecessor name="finishingEndPredecessor"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Interception" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+            <variable name="variable"/>
+            <viewVariable name="viewVariable"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Participant)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:variable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Passe" referenceName="messages" variableName="passe">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation/>
+                      </buttons>
+                      <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                        <initialOperation/>
+                      </buttons>
+                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Interception']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@subModelOperations.2/@groups.0"/>
+                      <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Passe" semanticCandidateExpression="var:self">
+                        <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </groups>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:variable"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <startingEndPredecessor name="startingEndPredecessor"/>
+            <finishingEndPredecessor name="finishingEndPredecessor"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Perte" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+            <variable name="variable"/>
+            <viewVariable name="viewVariable"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Passe" referenceName="messages" variableName="passe">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:false"/>
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation/>
+                      </buttons>
+                      <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                        <initialOperation/>
+                      </buttons>
+                      <page name="Default Page" domainClass="matchs::Passe" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Ajouter%20Perte']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.2/@groups.0"/>
+                      <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Passe" semanticCandidateExpression="var:self">
+                        <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </groups>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:passe"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <startingEndPredecessor name="startingEndPredecessor"/>
+            <finishingEndPredecessor name="finishingEndPredecessor"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:StateCreationTool" name="Ajouter But" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='But']">
+            <variable name="variable"/>
+            <viewVariable name="viewVariable"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Show variables" id="org.eclipse.sirius.business.api.action.printVariables">
+                  <parameters name="title" value="Execution creation"/>
+                  <parameters name="enabled" value="aql:false"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainerOrSelf(matchs::Match)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.But" referenceName="states" variableName="newState">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="service:container.currentParticipant"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ButEnd" referenceName="ends" variableName="startingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="state" valueExpression="var:newState"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newState.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ButEnd" referenceName="ends" variableName="finishingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="state" valueExpression="var:newState"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newState.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newState">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:startingEnd"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move finishingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
+                    <parameters name="referenceOwner" value="var:self"/>
+                    <parameters name="referenceName" value="ends"/>
+                    <parameters name="element" value="var:finishingEnd"/>
+                    <parameters name="predecessor" value="aql:finishingEndPredecessor.semanticEnd"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move startingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
+                    <parameters name="referenceOwner" value="var:self"/>
+                    <parameters name="referenceName" value="ends"/>
+                    <parameters name="element" value="var:startingEnd"/>
+                    <parameters name="predecessor" value="aql:startingEndPredecessor.semanticEnd"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newState">
+                    <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="Adjust new state position">
+                      <action href="../../org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@toolSections.6/@ownedTools[name='Reorder%20Executions%2C%20States%20Messages%2C%20InteractionUses']/@onEventMovedOperation/@firstModelOperations/@subModelOperations.2/@subModelOperations.2"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'s' + self.eContainerOrSelf(matchs::Match).states->size()"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:startingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + self.state.name"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish_' + self.state.name"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
