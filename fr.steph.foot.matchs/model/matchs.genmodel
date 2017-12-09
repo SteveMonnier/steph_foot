@@ -8,6 +8,29 @@
   <foreignModel>matchs.ecore</foreignModel>
   <genPackages prefix="Matchs" basePackage="fr.steph.foot" disposableProviderFactory="true"
       ecorePackage="matchs.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="matchs.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20réussi"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20décisive"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20neutre"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20out"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20adversaire"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Ballon%20perdu"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Dribble%20perdu"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre%20réussi"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre%20out"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre%20adversaire"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir%20cadré"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir%20non%20cadré"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir%20contré"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Corner"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Touche"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Coup%20franc"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="matchs.ecore#//PossessionType">
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Dribble"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Ballon%20porté"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Duel%20gagné"/>
+    </genEnums>
     <genClasses ecoreClass="matchs.ecore#//Saison">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Saison/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Saison/ownedInteractions"/>
@@ -41,11 +64,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Passe/réussi"/>
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//Remplacement"/>
-    <genClasses ecoreClass="matchs.ecore#//Execution">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Execution/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Execution/owner"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Execution/start"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Execution/end"/>
+    <genClasses ecoreClass="matchs.ecore#//Possession">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Possession/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/start"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/end"/>
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//But">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//But/name"/>
@@ -83,5 +106,6 @@
     <genClasses image="false" ecoreClass="matchs.ecore#//TimedEvent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//TimedEvent/temps"/>
     </genClasses>
+    <genClasses ecoreClass="matchs.ecore#//MixEnd"/>
   </genPackages>
 </genmodel:GenModel>

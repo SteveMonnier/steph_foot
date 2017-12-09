@@ -120,4 +120,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MixEnd" eSuperTypes="#//ActionEnd #//PossessionEnd"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
+    <eLiterals name="Passe réussi"/>
+    <eLiterals name="Passe décisive" value="1"/>
+    <eLiterals name="Passe neutre" value="2"/>
+    <eLiterals name="Passe out" value="3"/>
+    <eLiterals name="Passe adversaire" value="4"/>
+    <eLiterals name="Ballon perdu" value="5"/>
+    <eLiterals name="Dribble perdu" value="6"/>
+    <eLiterals name="Centre réussi" value="7"/>
+    <eLiterals name="Centre out" value="7"/>
+    <eLiterals name="Centre adversaire" value="7"/>
+    <eLiterals name="Tir cadré" value="7"/>
+    <eLiterals name="Tir non cadré" value="7"/>
+    <eLiterals name="Tir contré" value="12"/>
+    <eLiterals name="Corner" value="13"/>
+    <eLiterals name="Touche" value="14"/>
+    <eLiterals name="Coup franc" value="15"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PossessionType">
+    <eLiterals name="Dribble"/>
+    <eLiterals name="Ballon porté" value="1"/>
+    <eLiterals name="Duel gagné" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>
