@@ -48,6 +48,7 @@ public class ActionItemProvider extends TimedEventItemProvider {
 			addNamePropertyDescriptor(object);
 			addSendingEndPropertyDescriptor(object);
 			addReceivingEndPropertyDescriptor(object);
+			addActionTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,28 @@ public class ActionItemProvider extends TimedEventItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Action Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_actionType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_actionType_feature", "_UI_Action_type"),
+				 MatchsPackage.Literals.ACTION__ACTION_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +169,7 @@ public class ActionItemProvider extends TimedEventItemProvider {
 
 		switch (notification.getFeatureID(Action.class)) {
 			case MatchsPackage.ACTION__NAME:
+			case MatchsPackage.ACTION__ACTION_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

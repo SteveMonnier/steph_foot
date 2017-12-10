@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.sample.interactions.Interaction;
-import org.eclipse.sirius.sample.interactions.Message;
 
 import com.google.common.collect.Lists;
 
@@ -21,7 +19,6 @@ import fr.steph.foot.matchs.ButEnd;
 import fr.steph.foot.matchs.Joueur;
 import fr.steph.foot.matchs.Match;
 import fr.steph.foot.matchs.Participant;
-import fr.steph.foot.matchs.Passe;
 import fr.steph.foot.matchs.Possession;
 import fr.steph.foot.matchs.PossessionEnd;
 import fr.steph.foot.matchs.Saison;
@@ -93,7 +90,7 @@ public class Services {
      *            the message.
      * @return the semantic elements corresponding to the source of the message.
      */
-    public EObject getSendingContext(Passe msg) {
+    public EObject getSendingContext(Action msg) {
         ActionEnd sendingEnd = msg.getSendingEnd();
         if (sendingEnd != null) {
             Participant p = sendingEnd.getContext();
@@ -120,7 +117,7 @@ public class Services {
      *            the message.
      * @return the semantic elements corresponding to the target of the message.
      */
-    public EObject getReceivingContext(Passe msg) {
+    public EObject getReceivingContext(Action msg) {
         ActionEnd receivingEnd = msg.getReceivingEnd();
         if (receivingEnd != null) {
             Participant p = receivingEnd.getContext();

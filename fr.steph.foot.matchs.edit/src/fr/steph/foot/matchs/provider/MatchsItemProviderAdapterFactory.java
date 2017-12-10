@@ -141,26 +141,26 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.Passe} instances.
+	 * This keeps track of the one adapter used for all {@link fr.steph.foot.matchs.Action} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PasseItemProvider passeItemProvider;
+	protected ActionItemProvider actionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.steph.foot.matchs.Passe}.
+	 * This creates an adapter for a {@link fr.steph.foot.matchs.Action}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPasseAdapter() {
-		if (passeItemProvider == null) {
-			passeItemProvider = new PasseItemProvider(this);
+	public Adapter createActionAdapter() {
+		if (actionItemProvider == null) {
+			actionItemProvider = new ActionItemProvider(this);
 		}
 
-		return passeItemProvider;
+		return actionItemProvider;
 	}
 
 	/**
@@ -495,7 +495,7 @@ public class MatchsItemProviderAdapterFactory extends MatchsAdapterFactory imple
 		if (saisonItemProvider != null) saisonItemProvider.dispose();
 		if (matchItemProvider != null) matchItemProvider.dispose();
 		if (joueurItemProvider != null) joueurItemProvider.dispose();
-		if (passeItemProvider != null) passeItemProvider.dispose();
+		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (remplacementItemProvider != null) remplacementItemProvider.dispose();
 		if (possessionItemProvider != null) possessionItemProvider.dispose();
 		if (butItemProvider != null) butItemProvider.dispose();

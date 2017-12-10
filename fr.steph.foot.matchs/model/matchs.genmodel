@@ -9,27 +9,27 @@
   <genPackages prefix="Matchs" basePackage="fr.steph.foot" disposableProviderFactory="true"
       ecorePackage="matchs.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="matchs.ecore#//ActionType">
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20réussi"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20décisive"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20neutre"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20out"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe%20adversaire"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Ballon%20perdu"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Dribble%20perdu"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre%20réussi"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre%20out"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre%20adversaire"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir%20cadré"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir%20non%20cadré"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir%20contré"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe_réussi"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe_décisive"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe_neutre"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe_out"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Passe_adversaire"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Ballon_perdu"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Dribble_perdu"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre_réussi"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre_out"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Centre_adversaire"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir_cadré"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir_non_cadré"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Tir_contré"/>
       <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Corner"/>
       <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Touche"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Coup%20franc"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//ActionType/Coup_franc"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="matchs.ecore#//PossessionType">
       <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Dribble"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Ballon%20porté"/>
-      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Duel%20gagné"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Ballon_porté"/>
+      <genEnumLiterals ecoreEnumLiteral="matchs.ecore#//PossessionType/Duel_gagné"/>
     </genEnums>
     <genClasses ecoreClass="matchs.ecore#//Saison">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Saison/name"/>
@@ -58,10 +58,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Action/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Action/sendingEnd"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Action/receivingEnd"/>
-    </genClasses>
-    <genClasses ecoreClass="matchs.ecore#//Passe">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Passe/operation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Passe/réussi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Action/actionType"/>
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//Remplacement"/>
     <genClasses ecoreClass="matchs.ecore#//Possession">
@@ -69,6 +66,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/owner"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/start"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//Possession/possessionType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matchs.ecore#//Possession/possessions"/>
     </genClasses>
     <genClasses ecoreClass="matchs.ecore#//But">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matchs.ecore#//But/name"/>

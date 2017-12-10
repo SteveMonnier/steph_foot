@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class RemplacementImpl extends ActionImpl implements Remplacement {
+public class RemplacementImpl extends TimedEventImpl implements Remplacement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

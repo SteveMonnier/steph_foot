@@ -244,12 +244,7 @@ public class MatchItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MatchsPackage.Literals.MATCH__MESSAGES,
-				 MatchsFactory.eINSTANCE.createPasse()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MatchsPackage.Literals.MATCH__MESSAGES,
-				 MatchsFactory.eINSTANCE.createRemplacement()));
+				 MatchsFactory.eINSTANCE.createAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

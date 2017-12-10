@@ -19,7 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RemplacementItemProvider extends ActionItemProvider {
+public class RemplacementItemProvider extends TimedEventItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class RemplacementItemProvider extends ActionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Remplacement)object).getName();
+		String label = ((Remplacement)object).getTemps();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Remplacement_type") :
 			getString("_UI_Remplacement_type") + " " + label;

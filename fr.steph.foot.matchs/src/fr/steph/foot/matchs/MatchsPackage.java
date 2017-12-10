@@ -4,6 +4,7 @@ package fr.steph.foot.matchs;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -301,7 +302,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getTimedEvent()
 	 * @generated
 	 */
-	int TIMED_EVENT = 15;
+	int TIMED_EVENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Temps</b></em>' attribute.
@@ -377,13 +378,22 @@ public interface MatchsPackage extends EPackage {
 	int ACTION__RECEIVING_END = TIMED_EVENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Action Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ACTION_TYPE = TIMED_EVENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = TIMED_EVENT_FEATURE_COUNT + 3;
+	int ACTION_FEATURE_COUNT = TIMED_EVENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -395,88 +405,6 @@ public interface MatchsPackage extends EPackage {
 	int ACTION_OPERATION_COUNT = TIMED_EVENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.PasseImpl <em>Passe</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fr.steph.foot.matchs.impl.PasseImpl
-	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPasse()
-	 * @generated
-	 */
-	int PASSE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__TEMPS = ACTION__TEMPS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__NAME = ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Sending End</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__SENDING_END = ACTION__SENDING_END;
-
-	/**
-	 * The feature id for the '<em><b>Receiving End</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__RECEIVING_END = ACTION__RECEIVING_END;
-
-	/**
-	 * The feature id for the '<em><b>Operation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__OPERATION = ACTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Réussi</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE__RÉUSSI = ACTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Passe</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Passe</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PASSE_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.RemplacementImpl <em>Remplacement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -484,7 +412,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getRemplacement()
 	 * @generated
 	 */
-	int REMPLACEMENT = 5;
+	int REMPLACEMENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Temps</b></em>' attribute.
@@ -493,34 +421,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMPLACEMENT__TEMPS = ACTION__TEMPS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMPLACEMENT__NAME = ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Sending End</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMPLACEMENT__SENDING_END = ACTION__SENDING_END;
-
-	/**
-	 * The feature id for the '<em><b>Receiving End</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMPLACEMENT__RECEIVING_END = ACTION__RECEIVING_END;
+	int REMPLACEMENT__TEMPS = TIMED_EVENT__TEMPS;
 
 	/**
 	 * The number of structural features of the '<em>Remplacement</em>' class.
@@ -529,7 +430,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMPLACEMENT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+	int REMPLACEMENT_FEATURE_COUNT = TIMED_EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Remplacement</em>' class.
@@ -538,7 +439,7 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REMPLACEMENT_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
+	int REMPLACEMENT_OPERATION_COUNT = TIMED_EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.steph.foot.matchs.impl.PossessionImpl <em>Possession</em>}' class.
@@ -548,7 +449,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossession()
 	 * @generated
 	 */
-	int POSSESSION = 6;
+	int POSSESSION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -587,13 +488,31 @@ public interface MatchsPackage extends EPackage {
 	int POSSESSION__END = 3;
 
 	/**
+	 * The feature id for the '<em><b>Possession Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSSESSION__POSSESSION_TYPE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Possessions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSSESSION__POSSESSIONS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Possession</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POSSESSION_FEATURE_COUNT = 4;
+	int POSSESSION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Possession</em>' class.
@@ -612,7 +531,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getBut()
 	 * @generated
 	 */
-	int BUT = 7;
+	int BUT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Temps</b></em>' attribute.
@@ -685,7 +604,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getInteractionUse()
 	 * @generated
 	 */
-	int INTERACTION_USE = 8;
+	int INTERACTION_USE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -758,7 +677,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getAbstractEnd()
 	 * @generated
 	 */
-	int ABSTRACT_END = 9;
+	int ABSTRACT_END = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -813,7 +732,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getActionEnd()
 	 * @generated
 	 */
-	int ACTION_END = 10;
+	int ACTION_END = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -877,7 +796,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossessionEnd()
 	 * @generated
 	 */
-	int POSSESSION_END = 11;
+	int POSSESSION_END = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -941,7 +860,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getButEnd()
 	 * @generated
 	 */
-	int BUT_END = 12;
+	int BUT_END = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1005,7 +924,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getInteractionUseEnd()
 	 * @generated
 	 */
-	int INTERACTION_USE_END = 13;
+	int INTERACTION_USE_END = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1069,7 +988,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getParticipant()
 	 * @generated
 	 */
-	int PARTICIPANT = 14;
+	int PARTICIPANT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Est</b></em>' reference.
@@ -1107,7 +1026,7 @@ public interface MatchsPackage extends EPackage {
 	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getMixEnd()
 	 * @generated
 	 */
-	int MIX_END = 16;
+	int MIX_END = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1171,6 +1090,27 @@ public interface MatchsPackage extends EPackage {
 	 * @ordered
 	 */
 	int MIX_END_OPERATION_COUNT = ACTION_END_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link fr.steph.foot.matchs.ActionType <em>Action Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.steph.foot.matchs.ActionType
+	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getActionType()
+	 * @generated
+	 */
+	int ACTION_TYPE = 16;
+
+	/**
+	 * The meta object id for the '{@link fr.steph.foot.matchs.PossessionType <em>Possession Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.steph.foot.matchs.PossessionType
+	 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossessionType()
+	 * @generated
+	 */
+	int POSSESSION_TYPE = 17;
 
 
 	/**
@@ -1434,36 +1374,15 @@ public interface MatchsPackage extends EPackage {
 	EReference getAction_ReceivingEnd();
 
 	/**
-	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Passe <em>Passe</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Action#getActionType <em>Action Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Passe</em>'.
-	 * @see fr.steph.foot.matchs.Passe
+	 * @return the meta object for the attribute '<em>Action Type</em>'.
+	 * @see fr.steph.foot.matchs.Action#getActionType()
+	 * @see #getAction()
 	 * @generated
 	 */
-	EClass getPasse();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.steph.foot.matchs.Passe#getOperation <em>Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Operation</em>'.
-	 * @see fr.steph.foot.matchs.Passe#getOperation()
-	 * @see #getPasse()
-	 * @generated
-	 */
-	EReference getPasse_Operation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Passe#isRéussi <em>Réussi</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Réussi</em>'.
-	 * @see fr.steph.foot.matchs.Passe#isRéussi()
-	 * @see #getPasse()
-	 * @generated
-	 */
-	EAttribute getPasse_Réussi();
+	EAttribute getAction_ActionType();
 
 	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.Remplacement <em>Remplacement</em>}'.
@@ -1528,6 +1447,28 @@ public interface MatchsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPossession_End();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.steph.foot.matchs.Possession#getPossessionType <em>Possession Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Possession Type</em>'.
+	 * @see fr.steph.foot.matchs.Possession#getPossessionType()
+	 * @see #getPossession()
+	 * @generated
+	 */
+	EAttribute getPossession_PossessionType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.steph.foot.matchs.Possession#getPossessions <em>Possessions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Possessions</em>'.
+	 * @see fr.steph.foot.matchs.Possession#getPossessions()
+	 * @see #getPossession()
+	 * @generated
+	 */
+	EReference getPossession_Possessions();
 
 	/**
 	 * Returns the meta object for class '{@link fr.steph.foot.matchs.But <em>But</em>}'.
@@ -1828,6 +1769,26 @@ public interface MatchsPackage extends EPackage {
 	EClass getMixEnd();
 
 	/**
+	 * Returns the meta object for enum '{@link fr.steph.foot.matchs.ActionType <em>Action Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Action Type</em>'.
+	 * @see fr.steph.foot.matchs.ActionType
+	 * @generated
+	 */
+	EEnum getActionType();
+
+	/**
+	 * Returns the meta object for enum '{@link fr.steph.foot.matchs.PossessionType <em>Possession Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Possession Type</em>'.
+	 * @see fr.steph.foot.matchs.PossessionType
+	 * @generated
+	 */
+	EEnum getPossessionType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2051,30 +2012,12 @@ public interface MatchsPackage extends EPackage {
 		EReference ACTION__RECEIVING_END = eINSTANCE.getAction_ReceivingEnd();
 
 		/**
-		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.PasseImpl <em>Passe</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see fr.steph.foot.matchs.impl.PasseImpl
-		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPasse()
-		 * @generated
-		 */
-		EClass PASSE = eINSTANCE.getPasse();
-
-		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Action Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PASSE__OPERATION = eINSTANCE.getPasse_Operation();
-
-		/**
-		 * The meta object literal for the '<em><b>Réussi</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PASSE__RÉUSSI = eINSTANCE.getPasse_Réussi();
+		EAttribute ACTION__ACTION_TYPE = eINSTANCE.getAction_ActionType();
 
 		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.RemplacementImpl <em>Remplacement</em>}' class.
@@ -2127,6 +2070,22 @@ public interface MatchsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference POSSESSION__END = eINSTANCE.getPossession_End();
+
+		/**
+		 * The meta object literal for the '<em><b>Possession Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POSSESSION__POSSESSION_TYPE = eINSTANCE.getPossession_PossessionType();
+
+		/**
+		 * The meta object literal for the '<em><b>Possessions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POSSESSION__POSSESSIONS = eINSTANCE.getPossession_Possessions();
 
 		/**
 		 * The meta object literal for the '{@link fr.steph.foot.matchs.impl.ButImpl <em>But</em>}' class.
@@ -2371,6 +2330,26 @@ public interface MatchsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MIX_END = eINSTANCE.getMixEnd();
+
+		/**
+		 * The meta object literal for the '{@link fr.steph.foot.matchs.ActionType <em>Action Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.steph.foot.matchs.ActionType
+		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getActionType()
+		 * @generated
+		 */
+		EEnum ACTION_TYPE = eINSTANCE.getActionType();
+
+		/**
+		 * The meta object literal for the '{@link fr.steph.foot.matchs.PossessionType <em>Possession Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.steph.foot.matchs.PossessionType
+		 * @see fr.steph.foot.matchs.impl.MatchsPackageImpl#getPossessionType()
+		 * @generated
+		 */
+		EEnum POSSESSION_TYPE = eINSTANCE.getPossessionType();
 
 	}
 

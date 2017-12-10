@@ -5,6 +5,7 @@ package fr.steph.foot.matchs.impl;
 import fr.steph.foot.matchs.AbstractEnd;
 import fr.steph.foot.matchs.Action;
 import fr.steph.foot.matchs.ActionEnd;
+import fr.steph.foot.matchs.ActionType;
 import fr.steph.foot.matchs.But;
 import fr.steph.foot.matchs.ButEnd;
 import fr.steph.foot.matchs.InteractionUse;
@@ -15,15 +16,16 @@ import fr.steph.foot.matchs.MatchsFactory;
 import fr.steph.foot.matchs.MatchsPackage;
 import fr.steph.foot.matchs.MixEnd;
 import fr.steph.foot.matchs.Participant;
-import fr.steph.foot.matchs.Passe;
 import fr.steph.foot.matchs.Possession;
 import fr.steph.foot.matchs.PossessionEnd;
+import fr.steph.foot.matchs.PossessionType;
 import fr.steph.foot.matchs.Remplacement;
 import fr.steph.foot.matchs.Saison;
 import fr.steph.foot.matchs.TimedEvent;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -64,13 +66,6 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * @generated
 	 */
 	private EClass actionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass passeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,6 +150,20 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * @generated
 	 */
 	private EClass mixEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum actionTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum possessionTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -441,26 +450,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPasse() {
-		return passeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPasse_Operation() {
-		return (EReference)passeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPasse_Réussi() {
-		return (EAttribute)passeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAction_ActionType() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -515,6 +506,24 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 */
 	public EReference getPossession_End() {
 		return (EReference)possessionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPossession_PossessionType() {
+		return (EAttribute)possessionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPossession_Possessions() {
+		return (EReference)possessionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -774,6 +783,24 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getActionType() {
+		return actionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPossessionType() {
+		return possessionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MatchsFactory getMatchsFactory() {
 		return (MatchsFactory)getEFactoryInstance();
 	}
@@ -824,10 +851,7 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		createEAttribute(actionEClass, ACTION__NAME);
 		createEReference(actionEClass, ACTION__SENDING_END);
 		createEReference(actionEClass, ACTION__RECEIVING_END);
-
-		passeEClass = createEClass(PASSE);
-		createEReference(passeEClass, PASSE__OPERATION);
-		createEAttribute(passeEClass, PASSE__RÉUSSI);
+		createEAttribute(actionEClass, ACTION__ACTION_TYPE);
 
 		remplacementEClass = createEClass(REMPLACEMENT);
 
@@ -836,6 +860,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		createEReference(possessionEClass, POSSESSION__OWNER);
 		createEReference(possessionEClass, POSSESSION__START);
 		createEReference(possessionEClass, POSSESSION__END);
+		createEAttribute(possessionEClass, POSSESSION__POSSESSION_TYPE);
+		createEReference(possessionEClass, POSSESSION__POSSESSIONS);
 
 		butEClass = createEClass(BUT);
 		createEAttribute(butEClass, BUT__NAME);
@@ -874,6 +900,10 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		createEAttribute(timedEventEClass, TIMED_EVENT__TEMPS);
 
 		mixEndEClass = createEClass(MIX_END);
+
+		// Create enums
+		actionTypeEEnum = createEEnum(ACTION_TYPE);
+		possessionTypeEEnum = createEEnum(POSSESSION_TYPE);
 	}
 
 	/**
@@ -908,8 +938,7 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 
 		// Add supertypes to classes
 		actionEClass.getESuperTypes().add(this.getTimedEvent());
-		passeEClass.getESuperTypes().add(this.getAction());
-		remplacementEClass.getESuperTypes().add(this.getAction());
+		remplacementEClass.getESuperTypes().add(this.getTimedEvent());
 		butEClass.getESuperTypes().add(this.getTimedEvent());
 		actionEndEClass.getESuperTypes().add(this.getAbstractEnd());
 		possessionEndEClass.getESuperTypes().add(this.getAbstractEnd());
@@ -942,14 +971,11 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		initEAttribute(getJoueur_Numéro(), ecorePackage.getEInt(), "numéro", null, 0, 1, Joueur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJoueur_ParticipeA(), this.getParticipant(), this.getParticipant_Est(), "participeA", null, 0, -1, Joueur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_SendingEnd(), this.getActionEnd(), null, "sendingEnd", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_ReceivingEnd(), this.getActionEnd(), null, "receivingEnd", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(passeEClass, Passe.class, "Passe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPasse_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 1, 1, Passe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPasse_Réussi(), theEcorePackage.getEBoolean(), "réussi", null, 0, 1, Passe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_ActionType(), this.getActionType(), "actionType", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(remplacementEClass, Remplacement.class, "Remplacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -958,6 +984,8 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		initEReference(getPossession_Owner(), this.getParticipant(), null, "owner", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPossession_Start(), this.getPossessionEnd(), null, "start", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPossession_End(), this.getPossessionEnd(), null, "end", null, 1, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPossession_PossessionType(), this.getPossessionType(), "possessionType", null, 0, 1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPossession_Possessions(), this.getPossession(), null, "possessions", null, 0, -1, Possession.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(butEClass, But.class, "But", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBut_Name(), theEcorePackage.getEString(), "name", null, 1, 1, But.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -996,6 +1024,30 @@ public class MatchsPackageImpl extends EPackageImpl implements MatchsPackage {
 		initEAttribute(getTimedEvent_Temps(), theEcorePackage.getEString(), "temps", null, 0, 1, TimedEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mixEndEClass, MixEnd.class, "MixEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(actionTypeEEnum, ActionType.class, "ActionType");
+		addEEnumLiteral(actionTypeEEnum, ActionType.PASSE_RÉUSSI);
+		addEEnumLiteral(actionTypeEEnum, ActionType.PASSE_DÉCISIVE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.PASSE_NEUTRE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.PASSE_OUT);
+		addEEnumLiteral(actionTypeEEnum, ActionType.PASSE_ADVERSAIRE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.BALLON_PERDU);
+		addEEnumLiteral(actionTypeEEnum, ActionType.DRIBBLE_PERDU);
+		addEEnumLiteral(actionTypeEEnum, ActionType.CENTRE_RÉUSSI);
+		addEEnumLiteral(actionTypeEEnum, ActionType.CENTRE_OUT);
+		addEEnumLiteral(actionTypeEEnum, ActionType.CENTRE_ADVERSAIRE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.TIR_CADRÉ);
+		addEEnumLiteral(actionTypeEEnum, ActionType.TIR_NON_CADRÉ);
+		addEEnumLiteral(actionTypeEEnum, ActionType.TIR_CONTRÉ);
+		addEEnumLiteral(actionTypeEEnum, ActionType.CORNER);
+		addEEnumLiteral(actionTypeEEnum, ActionType.TOUCHE);
+		addEEnumLiteral(actionTypeEEnum, ActionType.COUP_FRANC);
+
+		initEEnum(possessionTypeEEnum, PossessionType.class, "PossessionType");
+		addEEnumLiteral(possessionTypeEEnum, PossessionType.DRIBBLE);
+		addEEnumLiteral(possessionTypeEEnum, PossessionType.BALLON_PORTÉ);
+		addEEnumLiteral(possessionTypeEEnum, PossessionType.DUEL_GAGNÉ);
 
 		// Create resource
 		createResource(eNS_URI);

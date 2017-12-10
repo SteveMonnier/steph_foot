@@ -4,6 +4,7 @@ package fr.steph.foot.matchs.impl;
 
 import fr.steph.foot.matchs.Action;
 import fr.steph.foot.matchs.ActionEnd;
+import fr.steph.foot.matchs.ActionType;
 import fr.steph.foot.matchs.MatchsPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,11 +25,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getSendingEnd <em>Sending End</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getReceivingEnd <em>Receiving End</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.impl.ActionImpl#getActionType <em>Action Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ActionImpl extends TimedEventImpl implements Action {
+public class ActionImpl extends TimedEventImpl implements Action {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +70,26 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 	 * @ordered
 	 */
 	protected ActionEnd receivingEnd;
+
+	/**
+	 * The default value of the '{@link #getActionType() <em>Action Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ActionType ACTION_TYPE_EDEFAULT = ActionType.PASSE_RÉUSSI;
+
+	/**
+	 * The cached value of the '{@link #getActionType() <em>Action Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ActionType actionType = ACTION_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +212,27 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ActionType getActionType() {
+		return actionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActionType(ActionType newActionType) {
+		ActionType oldActionType = actionType;
+		actionType = newActionType == null ? ACTION_TYPE_EDEFAULT : newActionType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MatchsPackage.ACTION__ACTION_TYPE, oldActionType, actionType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -201,6 +244,8 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 			case MatchsPackage.ACTION__RECEIVING_END:
 				if (resolve) return getReceivingEnd();
 				return basicGetReceivingEnd();
+			case MatchsPackage.ACTION__ACTION_TYPE:
+				return getActionType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,6 +266,9 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 				return;
 			case MatchsPackage.ACTION__RECEIVING_END:
 				setReceivingEnd((ActionEnd)newValue);
+				return;
+			case MatchsPackage.ACTION__ACTION_TYPE:
+				setActionType((ActionType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,6 +291,9 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 			case MatchsPackage.ACTION__RECEIVING_END:
 				setReceivingEnd((ActionEnd)null);
 				return;
+			case MatchsPackage.ACTION__ACTION_TYPE:
+				setActionType(ACTION_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,6 +312,8 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 				return sendingEnd != null;
 			case MatchsPackage.ACTION__RECEIVING_END:
 				return receivingEnd != null;
+			case MatchsPackage.ACTION__ACTION_TYPE:
+				return actionType != ACTION_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,6 +330,8 @@ public abstract class ActionImpl extends TimedEventImpl implements Action {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", actionType: ");
+		result.append(actionType);
 		result.append(')');
 		return result.toString();
 	}

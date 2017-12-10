@@ -84,10 +84,6 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 				return createActionAdapter();
 			}
 			@Override
-			public Adapter casePasse(Passe object) {
-				return createPasseAdapter();
-			}
-			@Override
 			public Adapter caseRemplacement(Remplacement object) {
 				return createRemplacementAdapter();
 			}
@@ -208,20 +204,6 @@ public class MatchsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fr.steph.foot.matchs.Passe <em>Passe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.steph.foot.matchs.Passe
-	 * @generated
-	 */
-	public Adapter createPasseAdapter() {
 		return null;
 	}
 

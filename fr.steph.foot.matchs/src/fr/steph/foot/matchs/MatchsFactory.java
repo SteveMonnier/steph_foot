@@ -49,13 +49,13 @@ public interface MatchsFactory extends EFactory {
 	Joueur createJoueur();
 
 	/**
-	 * Returns a new object of class '<em>Passe</em>'.
+	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Passe</em>'.
+	 * @return a new object of class '<em>Action</em>'.
 	 * @generated
 	 */
-	Passe createPasse();
+	Action createAction();
 
 	/**
 	 * Returns a new object of class '<em>Remplacement</em>'.

@@ -5,6 +5,7 @@ package fr.steph.foot.matchs.impl;
 import fr.steph.foot.matchs.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -59,7 +60,7 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 			case MatchsPackage.SAISON: return createSaison();
 			case MatchsPackage.MATCH: return createMatch();
 			case MatchsPackage.JOUEUR: return createJoueur();
-			case MatchsPackage.PASSE: return createPasse();
+			case MatchsPackage.ACTION: return createAction();
 			case MatchsPackage.REMPLACEMENT: return createRemplacement();
 			case MatchsPackage.POSSESSION: return createPossession();
 			case MatchsPackage.BUT: return createBut();
@@ -72,6 +73,40 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 			case MatchsPackage.MIX_END: return createMixEnd();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case MatchsPackage.ACTION_TYPE:
+				return createActionTypeFromString(eDataType, initialValue);
+			case MatchsPackage.POSSESSION_TYPE:
+				return createPossessionTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case MatchsPackage.ACTION_TYPE:
+				return convertActionTypeToString(eDataType, instanceValue);
+			case MatchsPackage.POSSESSION_TYPE:
+				return convertPossessionTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -110,9 +145,9 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Passe createPasse() {
-		PasseImpl passe = new PasseImpl();
-		return passe;
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
 	}
 
 	/**
@@ -213,6 +248,46 @@ public class MatchsFactoryImpl extends EFactoryImpl implements MatchsFactory {
 	public MixEnd createMixEnd() {
 		MixEndImpl mixEnd = new MixEndImpl();
 		return mixEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionType createActionTypeFromString(EDataType eDataType, String initialValue) {
+		ActionType result = ActionType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PossessionType createPossessionTypeFromString(EDataType eDataType, String initialValue) {
+		PossessionType result = PossessionType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPossessionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

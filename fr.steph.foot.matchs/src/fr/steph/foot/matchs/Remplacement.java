@@ -13,5 +13,5 @@ package fr.steph.foot.matchs;
  * @model
  * @generated
  */
-public interface Remplacement extends Action {
+public interface Remplacement extends TimedEvent {
 } // Remplacement

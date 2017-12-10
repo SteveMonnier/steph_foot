@@ -91,18 +91,9 @@ public class MatchsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MatchsPackage.PASSE: {
-				Passe passe = (Passe)theEObject;
-				T result = casePasse(passe);
-				if (result == null) result = caseAction(passe);
-				if (result == null) result = caseTimedEvent(passe);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case MatchsPackage.REMPLACEMENT: {
 				Remplacement remplacement = (Remplacement)theEObject;
 				T result = caseRemplacement(remplacement);
-				if (result == null) result = caseAction(remplacement);
 				if (result == null) result = caseTimedEvent(remplacement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -242,21 +233,6 @@ public class MatchsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAction(Action object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Passe</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Passe</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePasse(Passe object) {
 		return null;
 	}
 

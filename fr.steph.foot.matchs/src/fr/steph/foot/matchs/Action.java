@@ -19,10 +19,11 @@ package fr.steph.foot.matchs;
  *   <li>{@link fr.steph.foot.matchs.Action#getName <em>Name</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Action#getSendingEnd <em>Sending End</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Action#getReceivingEnd <em>Receiving End</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.Action#getActionType <em>Action Type</em>}</li>
  * </ul>
  *
  * @see fr.steph.foot.matchs.MatchsPackage#getAction()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Action extends TimedEvent {
@@ -103,5 +104,34 @@ public interface Action extends TimedEvent {
 	 * @generated
 	 */
 	void setReceivingEnd(ActionEnd value);
+
+	/**
+	 * Returns the value of the '<em><b>Action Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.steph.foot.matchs.ActionType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action Type</em>' attribute.
+	 * @see fr.steph.foot.matchs.ActionType
+	 * @see #setActionType(ActionType)
+	 * @see fr.steph.foot.matchs.MatchsPackage#getAction_ActionType()
+	 * @model
+	 * @generated
+	 */
+	ActionType getActionType();
+
+	/**
+	 * Sets the value of the '{@link fr.steph.foot.matchs.Action#getActionType <em>Action Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action Type</em>' attribute.
+	 * @see fr.steph.foot.matchs.ActionType
+	 * @see #getActionType()
+	 * @generated
+	 */
+	void setActionType(ActionType value);
 
 } // Action

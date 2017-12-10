@@ -3,6 +3,8 @@
 package fr.steph.foot.matchs.tests;
 
 import fr.steph.foot.matchs.Action;
+import fr.steph.foot.matchs.MatchsFactory;
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -10,7 +12,16 @@ import fr.steph.foot.matchs.Action;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class ActionTest extends TimedEventTest {
+public class ActionTest extends TimedEventTest {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(ActionTest.class);
+	}
 
 	/**
 	 * Constructs a new Action test case with the given name.
@@ -31,6 +42,28 @@ public abstract class ActionTest extends TimedEventTest {
 	@Override
 	protected Action getFixture() {
 		return (Action)fixture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(MatchsFactory.eINSTANCE.createAction());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
 	}
 
 } //ActionTest

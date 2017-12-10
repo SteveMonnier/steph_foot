@@ -42,7 +42,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="participeA" upperBound="-1"
         eType="#//Participant" eOpposite="#//Participant/est"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" eSuperTypes="#//TimedEvent">
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//TimedEvent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A message sent from a participant to another (or itself)."/>
     </eAnnotations>
@@ -51,13 +51,9 @@
         eType="#//ActionEnd"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="receivingEnd" lowerBound="1"
         eType="#//ActionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionType" eType="#//ActionType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Passe" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="réussi" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Remplacement" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Remplacement" eSuperTypes="#//TimedEvent"/>
   <eClassifiers xsi:type="ecore:EClass" name="Possession">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents an interval of time in which a particapant is active executing some code."/>
@@ -66,6 +62,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Participant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//PossessionEnd"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//PossessionEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="possessionType" eType="#//PossessionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="possessions" upperBound="-1"
+        eType="#//Possession" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="But" eSuperTypes="#//TimedEvent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -121,26 +120,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MixEnd" eSuperTypes="#//ActionEnd #//PossessionEnd"/>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
-    <eLiterals name="Passe réussi"/>
-    <eLiterals name="Passe décisive" value="1"/>
-    <eLiterals name="Passe neutre" value="2"/>
-    <eLiterals name="Passe out" value="3"/>
-    <eLiterals name="Passe adversaire" value="4"/>
-    <eLiterals name="Ballon perdu" value="5"/>
-    <eLiterals name="Dribble perdu" value="6"/>
-    <eLiterals name="Centre réussi" value="7"/>
-    <eLiterals name="Centre out" value="7"/>
-    <eLiterals name="Centre adversaire" value="7"/>
-    <eLiterals name="Tir cadré" value="7"/>
-    <eLiterals name="Tir non cadré" value="7"/>
-    <eLiterals name="Tir contré" value="12"/>
+    <eLiterals name="Passe_réussi"/>
+    <eLiterals name="Passe_décisive" value="1"/>
+    <eLiterals name="Passe_neutre" value="2"/>
+    <eLiterals name="Passe_out" value="3"/>
+    <eLiterals name="Passe_adversaire" value="4"/>
+    <eLiterals name="Ballon_perdu" value="5"/>
+    <eLiterals name="Dribble_perdu" value="6"/>
+    <eLiterals name="Centre_réussi" value="7"/>
+    <eLiterals name="Centre_out" value="7"/>
+    <eLiterals name="Centre_adversaire" value="7"/>
+    <eLiterals name="Tir_cadré" value="7"/>
+    <eLiterals name="Tir_non_cadré" value="7"/>
+    <eLiterals name="Tir_contré" value="12"/>
     <eLiterals name="Corner" value="13"/>
     <eLiterals name="Touche" value="14"/>
-    <eLiterals name="Coup franc" value="15"/>
+    <eLiterals name="Coup_franc" value="15"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PossessionType">
     <eLiterals name="Dribble"/>
-    <eLiterals name="Ballon porté" value="1"/>
-    <eLiterals name="Duel gagné" value="2"/>
+    <eLiterals name="Ballon_porté" value="1"/>
+    <eLiterals name="Duel_gagné" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

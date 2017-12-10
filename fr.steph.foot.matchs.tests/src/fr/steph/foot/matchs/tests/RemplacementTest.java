@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RemplacementTest extends ActionTest {
+public class RemplacementTest extends TimedEventTest {
 
 	/**
 	 * <!-- begin-user-doc -->

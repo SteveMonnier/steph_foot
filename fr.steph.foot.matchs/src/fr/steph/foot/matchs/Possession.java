@@ -2,6 +2,7 @@
  */
 package fr.steph.foot.matchs;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.steph.foot.matchs.Possession#getOwner <em>Owner</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Possession#getStart <em>Start</em>}</li>
  *   <li>{@link fr.steph.foot.matchs.Possession#getEnd <em>End</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.Possession#getPossessionType <em>Possession Type</em>}</li>
+ *   <li>{@link fr.steph.foot.matchs.Possession#getPossessions <em>Possessions</em>}</li>
  * </ul>
  *
  * @see fr.steph.foot.matchs.MatchsPackage#getPossession()
@@ -131,5 +134,50 @@ public interface Possession extends EObject {
 	 * @generated
 	 */
 	void setEnd(PossessionEnd value);
+
+	/**
+	 * Returns the value of the '<em><b>Possession Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.steph.foot.matchs.PossessionType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Possession Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Possession Type</em>' attribute.
+	 * @see fr.steph.foot.matchs.PossessionType
+	 * @see #setPossessionType(PossessionType)
+	 * @see fr.steph.foot.matchs.MatchsPackage#getPossession_PossessionType()
+	 * @model
+	 * @generated
+	 */
+	PossessionType getPossessionType();
+
+	/**
+	 * Sets the value of the '{@link fr.steph.foot.matchs.Possession#getPossessionType <em>Possession Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Possession Type</em>' attribute.
+	 * @see fr.steph.foot.matchs.PossessionType
+	 * @see #getPossessionType()
+	 * @generated
+	 */
+	void setPossessionType(PossessionType value);
+
+	/**
+	 * Returns the value of the '<em><b>Possessions</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.steph.foot.matchs.Possession}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Possessions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Possessions</em>' containment reference list.
+	 * @see fr.steph.foot.matchs.MatchsPackage#getPossession_Possessions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Possession> getPossessions();
 
 } // Possession
