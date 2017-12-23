@@ -4,16 +4,19 @@
     <participants est="//@joueurs.0"/>
     <participants est="//@joueurs.1"/>
     <messages temps="1:00" name="p1" sendingEnd="//@ownedInteractions.0/@ends.0" receivingEnd="//@ownedInteractions.0/@ends.1"/>
-    <messages sendingEnd="//@ownedInteractions.0/@ends.2" receivingEnd="//@ownedInteractions.0/@ends.3"/>
+    <messages sendingEnd="//@ownedInteractions.0/@ends.2" receivingEnd="//@ownedInteractions.0/@ends.3" actionType="Passe_neutre"/>
     <messages sendingEnd="//@ownedInteractions.0/@ends.4" receivingEnd="//@ownedInteractions.0/@ends.5"/>
-    <messages sendingEnd="//@ownedInteractions.0/@ends.6" actionType="Passe_out"/>
+    <messages sendingEnd="//@ownedInteractions.0/@ends.6" actionType="Passe_adversaire"/>
     <messages sendingEnd="//@ownedInteractions.0/@ends.7" receivingEnd="//@ownedInteractions.0/@ends.8" actionType="Passe_décisive"/>
     <messages sendingEnd="//@ownedInteractions.0/@ends.10" receivingEnd="//@ownedInteractions.0/@ends.11" actionType="Passe_décisive"/>
-    <messages sendingEnd="//@ownedInteractions.0/@ends.9" actionType="Passe_adversaire"/>
+    <messages sendingEnd="//@ownedInteractions.0/@ends.9" actionType="Passe_out"/>
+    <messages sendingEnd="//@ownedInteractions.0/@ends.12" receivingEnd="//@ownedInteractions.0/@ends.13" actionType="Centre_réussi"/>
+    <messages sendingEnd="//@ownedInteractions.0/@ends.14" actionType="Tir_cadré"/>
     <executions name="e1" owner="//@ownedInteractions.0/@participants.1" start="//@ownedInteractions.0/@ends.3" end="//@ownedInteractions.0/@ends.4"/>
     <executions name="e2" owner="//@ownedInteractions.0/@participants.0" start="//@ownedInteractions.0/@ends.5" end="//@ownedInteractions.0/@ends.6"/>
     <executions name="e3" owner="//@ownedInteractions.0/@participants.1" start="//@ownedInteractions.0/@ends.8" end="//@ownedInteractions.0/@ends.9"/>
     <executions name="e4" owner="//@ownedInteractions.0/@participants.0" start="//@ownedInteractions.0/@ends.11" end="//@ownedInteractions.0/@ends.12"/>
+    <executions name="e5" owner="//@ownedInteractions.0/@participants.1" start="//@ownedInteractions.0/@ends.13" end="//@ownedInteractions.0/@ends.14"/>
     <ends xsi:type="matchs:MixEnd" name="m1" context="//@ownedInteractions.0/@participants.0" message="//@ownedInteractions.0/@messages.0"/>
     <ends xsi:type="matchs:MixEnd" name="m2" context="//@ownedInteractions.0/@participants.1" message="//@ownedInteractions.0/@messages.0"/>
     <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.0/@participants.0" message="//@ownedInteractions.0/@messages.1"/>
@@ -26,7 +29,9 @@
     <ends xsi:type="matchs:MixEnd" name="finishe3" context="//@ownedInteractions.0/@participants.1" message="//@ownedInteractions.0/@messages.6" execution="//@ownedInteractions.0/@executions.2"/>
     <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.0/@participants.1" message="//@ownedInteractions.0/@messages.5"/>
     <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.0/@participants.0" message="//@ownedInteractions.0/@messages.5" execution="//@ownedInteractions.0/@executions.3"/>
-    <ends xsi:type="matchs:MixEnd" name="finishe4" context="//@ownedInteractions.0/@participants.0" execution="//@ownedInteractions.0/@executions.3"/>
+    <ends xsi:type="matchs:MixEnd" name="finishe4" context="//@ownedInteractions.0/@participants.0" message="//@ownedInteractions.0/@messages.7" execution="//@ownedInteractions.0/@executions.3"/>
+    <ends xsi:type="matchs:MixEnd" context="//@ownedInteractions.0/@participants.1" message="//@ownedInteractions.0/@messages.7" execution="//@ownedInteractions.0/@executions.4"/>
+    <ends xsi:type="matchs:MixEnd" name="finishe5" context="//@ownedInteractions.0/@participants.1" message="//@ownedInteractions.0/@messages.8" execution="//@ownedInteractions.0/@executions.4"/>
   </ownedInteractions>
   <ownedInteractions equipeAdverse="Bordeaux"/>
   <ownedInteractions equipeAdverse="Paris"/>

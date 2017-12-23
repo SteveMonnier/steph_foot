@@ -95,6 +95,14 @@
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Passe_neutre/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Passe_décisive/]">
             <style sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
@@ -119,6 +127,86 @@
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Ballon_perdu/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Dribble_perdu/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Corner/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Touche/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Centre_réussi/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Centre_out/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Centre_adversaire/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Tir_cadré/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Tir_non_cadré/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclAsType(Action).actionType = ActionType::Tir_contré/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:temps">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
         </edgeMappings>
         <toolSections>
           <ownedTools xsi:type="tool_2:InstanceRoleCreationTool" name="Ajouter Participant" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']">
@@ -131,32 +219,55 @@
             </initialOperation>
             <predecessor name="predecessor"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter possession du ballon" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+          <ownedTools xsi:type="tool_2:StateCreationTool" name="Ajouter But" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='But']">
             <variable name="variable"/>
             <viewVariable name="viewVariable"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainerOrSelf(matchs::Match)">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:variable"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Show variables" id="org.eclipse.sirius.business.api.action.printVariables">
+                  <parameters name="title" value="Execution creation"/>
+                  <parameters name="enabled" value="aql:false"/>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="startingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:startingEnd"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:startingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + self.execution.name"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainerOrSelf(matchs::Match)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.But" referenceName="states" variableName="newState">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="service:container.currentParticipant"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ButEnd" referenceName="ends" variableName="startingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="state" valueExpression="var:newState"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newState.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ButEnd" referenceName="ends" variableName="finishingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="state" valueExpression="var:newState"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newState.owner"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newState">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:startingEnd"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move finishingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
+                    <parameters name="referenceOwner" value="var:self"/>
+                    <parameters name="referenceName" value="ends"/>
+                    <parameters name="element" value="var:finishingEnd"/>
+                    <parameters name="predecessor" value="aql:finishingEndPredecessor.semanticEnd"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move startingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
+                    <parameters name="referenceOwner" value="var:self"/>
+                    <parameters name="referenceName" value="ends"/>
+                    <parameters name="element" value="var:startingEnd"/>
+                    <parameters name="predecessor" value="aql:startingEndPredecessor.semanticEnd"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newState">
+                    <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="Adjust new state position">
+                      <action href="../../org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@toolSections.6/@ownedTools[name='Reorder%20Executions%2C%20States%20Messages%2C%20InteractionUses']/@onEventMovedOperation/@firstModelOperations/@subModelOperations.2/@subModelOperations.2"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'s' + self.eContainerOrSelf(matchs::Match).states->size()"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:startingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + self.state.name"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish_' + self.state.name"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -219,61 +330,6 @@
             <startingEndPredecessor name="startingEndPredecessor"/>
             <finishingEndPredecessor name="finishingEndPredecessor"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:StateCreationTool" name="Ajouter But" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='But']">
-            <variable name="variable"/>
-            <viewVariable name="viewVariable"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Show variables" id="org.eclipse.sirius.business.api.action.printVariables">
-                  <parameters name="title" value="Execution creation"/>
-                  <parameters name="enabled" value="aql:false"/>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainerOrSelf(matchs::Match)">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.But" referenceName="states" variableName="newState">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="service:container.currentParticipant"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ButEnd" referenceName="ends" variableName="startingEnd">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="state" valueExpression="var:newState"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newState.owner"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.ButEnd" referenceName="ends" variableName="finishingEnd">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="state" valueExpression="var:newState"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newState.owner"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newState">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:startingEnd"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move finishingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
-                    <parameters name="referenceOwner" value="var:self"/>
-                    <parameters name="referenceName" value="ends"/>
-                    <parameters name="element" value="var:finishingEnd"/>
-                    <parameters name="predecessor" value="aql:finishingEndPredecessor.semanticEnd"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Move startingEnd" icon="" id="org.eclipse.sirius.business.api.action.moveElement">
-                    <parameters name="referenceOwner" value="var:self"/>
-                    <parameters name="referenceName" value="ends"/>
-                    <parameters name="element" value="var:startingEnd"/>
-                    <parameters name="predecessor" value="aql:startingEndPredecessor.semanticEnd"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newState">
-                    <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="Adjust new state position">
-                      <action href="../../org.eclipse.sirius.sample.interactions.design/description/interaction.odesign#//@ownedViewpoints[name='Interactions']/@ownedRepresentations[name='Sequence%20Diagram%20on%20Interaction']/@defaultLayer/@toolSections.6/@ownedTools[name='Reorder%20Executions%2C%20States%20Messages%2C%20InteractionUses']/@onEventMovedOperation/@firstModelOperations/@subModelOperations.2/@subModelOperations.2"/>
-                    </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'s' + self.eContainerOrSelf(matchs::Match).states->size()"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:startingEnd">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'start_' + self.state.name"/>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish_' + self.state.name"/>
-                  </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-            <startingEndPredecessor name="startingEndPredecessor"/>
-            <finishingEndPredecessor name="finishingEndPredecessor"/>
-          </ownedTools>
           <ownedTools xsi:type="tool:ToolGroup" name="Passes">
             <tools xsi:type="tool_2:MessageCreationTool" name="Ajouter Passe réussi" edgeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@edgeMappings[name='Action']">
               <sourceVariable name="sourceVariable"/>
@@ -292,7 +348,6 @@
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd1"/>
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
                       <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
                         <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
                           <initialOperation/>
@@ -300,7 +355,7 @@
                         <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                           <initialOperation/>
                         </buttons>
-                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.3/@groups.0"/>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.2/@groups.0"/>
                         <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
                           <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
                             <initialOperation>
@@ -311,6 +366,7 @@
                           </controls>
                         </groups>
                       </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Passe_réussi/]"/>
                     </subModelOperations>
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd1">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
@@ -342,7 +398,6 @@
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:sourceVariable.oclAsType(matchs::Possession).end"/>
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="réussi" valueExpression="aql:true"/>
                       <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
                         <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
                           <initialOperation/>
@@ -350,7 +405,7 @@
                         <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                           <initialOperation/>
                         </buttons>
-                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.3/@groups.0"/>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.2/@groups.0"/>
                         <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
                           <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
                             <initialOperation>
@@ -361,6 +416,7 @@
                           </controls>
                         </groups>
                       </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Passe_réussi/]"/>
                     </subModelOperations>
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.oclAsType(matchs::Possession).end">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
@@ -505,6 +561,121 @@
               <startingEndPredecessor name="startingEndPredecessor"/>
               <finishingEndPredecessor name="finishingEndPredecessor"/>
             </tools>
+            <tools xsi:type="tool_2:MessageCreationTool" name="Ajouter Passe neutre" edgeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@edgeMappings[name='Action']">
+              <sourceVariable name="sourceVariable"/>
+              <targetVariable name="targetVariable"/>
+              <sourceViewVariable name="sourceViewVariable"/>
+              <targetViewVariable name="targetViewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:sourceVariable.oclIsKindOf(matchs::Participant)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="sendingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:sourceVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Passe_neutre/]"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.2/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.3/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:sourceVariable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:sourceVariable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Passe_neutre/]"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.2/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.3/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
             <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Passe Adversaire" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
               <variable name="variable"/>
               <viewVariable name="viewVariable"/>
@@ -520,7 +691,7 @@
                         <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                           <initialOperation/>
                         </buttons>
-                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.2/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.3/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
                         <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
                           <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
                             <initialOperation>
@@ -557,7 +728,7 @@
                         <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                           <initialOperation/>
                         </buttons>
-                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.3/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Passes']/@tools.4/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
                         <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
                           <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
                             <initialOperation>
@@ -569,6 +740,497 @@
                         </groups>
                       </subModelOperations>
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Passe_out/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="Action stoppée">
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Ballon perdu" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20stoppée']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Ballon_perdu/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Drible perdu" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20stoppée']/@tools.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Dribble_perdu/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Corner" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20stoppée']/@tools.2/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Corner/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Touche" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Action%20stoppée']/@tools.3/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Touche/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="Centre">
+            <tools xsi:type="tool_2:MessageCreationTool" name="Ajouter Centre réussi" edgeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@edgeMappings[name='Action']">
+              <sourceVariable name="sourceVariable"/>
+              <targetVariable name="targetVariable"/>
+              <sourceViewVariable name="sourceViewVariable"/>
+              <targetViewVariable name="targetViewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:sourceVariable.oclIsKindOf(matchs::Participant)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="sendingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:sourceVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="var:sendingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Centre']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.2/@subModelOperations.2/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Centre_réussi/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sendingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:sourceVariable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:sourceVariable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="receivingEnd" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Centre']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.1/@subModelOperations.2/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Centre_réussi/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:sourceVariable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Possession" referenceName="executions" variableName="newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="owner" valueExpression="var:targetVariable"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:receivingEnd1">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.MixEnd" referenceName="ends" variableName="finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="execution" valueExpression="var:newPossession"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="aql:newPossession.owner"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPossession">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="var:receivingEnd1"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="end" valueExpression="var:finishingEnd2"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'e' + self.eContainerOrSelf(matchs::Match).executions->size()"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:finishingEnd2">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'finish' + self.execution.name"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Centre Adversaire" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Centre']/@tools.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Centre_adversaire/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Centre Out" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Centre']/@tools.2/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Centre_out/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="Tir">
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Tir cadré" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Tir']/@tools.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Tir_cadré/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Tir non cadré" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Tir']/@tools.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Tir_non_cadré/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Tir contré" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Tir']/@tools.2/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Tir_contré/]"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+              <startingEndPredecessor name="startingEndPredecessor"/>
+              <finishingEndPredecessor name="finishingEndPredecessor"/>
+            </tools>
+            <tools xsi:type="tool_2:ExecutionCreationTool" name="Ajouter Coup franc" nodeMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']" extraMappings="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@nodeMappings[name='Participant']/@borderedNodeMappings[name='Lifeline']/@borderedNodeMappings[name='Possession']">
+              <variable name="variable"/>
+              <viewVariable name="viewVariable"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.eContainer()">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:variable.oclIsKindOf(matchs::Possession)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="matchs.Action" referenceName="messages" variableName="Action">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="sendingEnd" valueExpression="aql:variable.oclAsType(matchs::Possession).end"/>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Temps">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" domainClass="matchs::Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Matchs']/@ownedRepresentations[name='Match']/@defaultLayer/@toolSections.0/@ownedTools[name='Tir']/@tools.3/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Temps" domainClass="matchs::Action" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" labelExpression="Temps" valueExpression="aql:self.temps">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="temps" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="[matchs::ActionType::Coup_franc/]"/>
                     </subModelOperations>
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:variable.oclAsType(matchs::Possession).end">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="message" valueExpression="var:Action"/>
